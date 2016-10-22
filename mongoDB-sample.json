@@ -1,0 +1,28 @@
+{
+    "result": {
+        "touroperators": [
+            {
+                "name": "",
+                "trips": [
+                    {
+                        "name": "",
+                        "price": 10,
+                        // "departureDate": "",
+                        "arrivalDate": "",
+                        "destinations": [
+                            {
+                                "name": ""
+                            }
+                        ]
+                        // "customers": [
+                        //     {
+                        //         "firstName": "",
+                        //         "lastName": ""
+                        //     }
+                        // ]
+                    }
+                ]
+            }
+        ]
+    }
+}
