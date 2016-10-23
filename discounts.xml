@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discounts>
+    <trip name="Italy-The-One-And-Only">
+        <discountPercentage>10</discountPercentage>
+    </trip>
+    <trip name="Lefkada-The-Emerald-Island">
+        <discountPercentage>25</discountPercentage>
+    </trip>
+    <trip name="The-Secret-Beauty-Of-Mexico">
+        <discountPercentage>30</discountPercentage>
+    </trip>
+    <trip name="Santorini-Holiday">
+        <discountPercentage>20</discountPercentage>
+    </trip>
+</discounts>
