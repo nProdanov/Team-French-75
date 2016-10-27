@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity;
+
 using TravelAgency.Models;
 
 namespace TravelAgency.Data
 {
-    public class TravelAgencyDbContext : DbContext
+    public class TravelAgencyDbContext : DbContext, ITravelAgencyDbContext
     {
         public TravelAgencyDbContext()
             : base("TravelAgencyDatabase")

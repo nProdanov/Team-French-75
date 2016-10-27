@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Data", "Travel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Client", "TravelAgency.Client\TravelAgency.Client.csproj", "{416A6128-5D3C-4BC3-B3C0-B22186B664F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.MongoDbExtractor", "TravelAgency.MongoDbExtractor\TravelAgency.MongoDbExtractor.csproj", "{DACDDF2B-947B-4EB2-B749-DE9463DD4199}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{416A6128-5D3C-4BC3-B3C0-B22186B664F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{416A6128-5D3C-4BC3-B3C0-B22186B664F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{416A6128-5D3C-4BC3-B3C0-B22186B664F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACDDF2B-947B-4EB2-B749-DE9463DD4199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACDDF2B-947B-4EB2-B749-DE9463DD4199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACDDF2B-947B-4EB2-B749-DE9463DD4199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACDDF2B-947B-4EB2-B749-DE9463DD4199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
