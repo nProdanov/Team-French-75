@@ -2,24 +2,81 @@
     "result": {
         "touroperators": [
             {
-                "name": "",
+                "name": "Eleganca Tours",
                 "trips": [
                     {
-                        "name": "",
-                        "price": 10,
-                        // "departureDate": "",
-                        "arrivalDate": "",
+                        "name": "Italy The One And Only",
+                        "price": 990,
+                        "arrivalDate": "2016-10-28",
                         "destinations": [
                             {
-                                "name": ""
+                                "name": "Rome"
+                            },
+                            {
+                                "name": "Naples"
+                            },
+                            {
+                                "name": "Florence"
+                            }                            
+                        ]
+                    },
+                    {
+                        "name": "Lefkada The Emerald Island",
+                        "price": 340,
+                        "arrivalDate": "2016-10-25",
+                        "destinations": [
+                            {
+                                "name": "Lefkada"
+                            },
+                            {
+                                "name": "Porto Katsiki"
+                            },
+                            {
+                                "name": "Ithaca"
                             }
                         ]
-                        // "customers": [
-                        //     {
-                        //         "firstName": "",
-                        //         "lastName": ""
-                        //     }
-                        // ]
+                    }
+                ]
+            },
+            {
+                "name": "Elite Travel Agency",
+                "trips": [
+                    {
+                        "name": "The Secret Beauty Of Mexico",
+                        "price": 3300,
+                        "arrivalDate": "2016-11-01",
+                        "destinations": [
+                            {
+                                "name": "Mexico City"
+                            },
+                            {
+                                "name": "Cancun"
+                            },
+                            {
+                                "name": "Cenote Dzitnup"
+                            },
+                            {
+                                "name": "The pyramids of Teotihuacan"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Mirage Travel",
+                "trips": [
+                    {
+                        "name": "Santorini Holiday",
+                        "price": 600,
+                        "arrivalDate": "2016-10-29",
+                        "destinations": [
+                            {
+                                "name": "Oia"
+                            },
+                            {
+                                "name": "Thera"
+                            }
+                        ]
                     }
                 ]
             }
