@@ -17,7 +17,7 @@
                             },
                             {
                                 "name": "Florence"
-                            }                            
+                            }
                         ]
                     },
                     {
@@ -33,6 +33,16 @@
                             },
                             {
                                 "name": "Ithaca"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mie Prefecture Japan",
+                        "price": 3000,
+                        "arrivalDate": "2016-11-05",
+                        "destinations": [
+                            {
+                                "name": "Mie"
                             }
                         ]
                     }
@@ -59,6 +69,32 @@
                                 "name": "The pyramids of Teotihuacan"
                             }
                         ]
+                    },
+                    {
+                        "name": "Chiloe Chile",
+                        "price": 3000,
+                        "arrivalDate": "2016-11-01",
+                        "destinations": [
+                            {
+                                "name": "Chiloe"
+                            },
+                            {
+                                "name": "Chonchi"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Liege Belgium",
+                        "price": 600,
+                        "arrivalDate": "2016-11-01",
+                        "destinations": [
+                            {
+                                "name": "Liege"
+                            },
+                            {
+                                "name": "Maastricht"
+                            }
+                        ]
                     }
                 ]
             },
@@ -75,6 +111,131 @@
                             },
                             {
                                 "name": "Thera"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Rea Holidays",
+                "trips": [
+                    {
+                        "name": "Zimbabwe",
+                        "price": 1200,
+                        "arrivalDate": "2016-11-02",
+                        "destinations": [
+                            {
+                                "name": "Harare"
+                            },
+                            {
+                                "name": "Gweru"
+                            },
+                            {
+                                "name": "Bulawayo"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Mega Travel",
+                "trips": [
+                    {
+                        "name": "Sicily Italy",
+                        "price": 1000,
+                        "arrivalDate": "2016-11-02",
+                        "destinations": [
+                            {
+                                "name": "Catania"
+                            },
+                            {
+                                "name": "Mesina"
+                            },
+                            {
+                                "name": "Palermo"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Tasmania",
+                        "price": 3500,
+                        "arrivalDate": "2016-11-05",
+                        "destinations": [
+                            {
+                                "name": "Tasmania"
+                            },
+                            {
+                                "name": "Hobart"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Reina Travel",
+                "trips": [
+                    {
+                        "name": "Costa Rica",
+                        "price": 3400,
+                        "arrivalDate": "2016-11-05",
+                        "destinations": [
+                            {
+                                "name": "Limon"
+                            },
+                            {
+                                "name": "San Jose"
+                            },
+                            {
+                                "name": "Bocas Del Toro"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Alma Travel",
+                "trips": [
+                    {
+                        "name": "Galle Sri Lanka",
+                        "price": 3900,
+                        "arrivalDate": "2016-11-10",
+                        "destinations": [
+                            {
+                                "name": "Galle"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Zagreb Croatia",
+                        "price": 900,
+                        "arrivalDate": "2016-11-10",
+                        "destinations": [
+                            {
+                                "name": "Zagreb"
+                            },
+                            {
+                                "name": "Samobor"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "New Balkan Tours",
+                "trips": [
+                    {
+                        "name": "Wales",
+                        "price": 1100,
+                        "arrivalDate": "2016-11-06",
+                        "destinations": [
+                            {
+                                "name": "Elan Village"
+                            },
+                            {
+                                "name": "New Town"
+                            },
+                            {
+                                "name": "Holy Head"
                             }
                         ]
                     }
