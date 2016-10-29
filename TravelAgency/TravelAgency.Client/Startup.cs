@@ -24,8 +24,14 @@ namespace TravelAgency.Client
 
                 dataImporter.ImportData();
                 travelAgencyDbContext.SaveChanges();
+
+                // generate report 1 - pdf
+                // generate report 2 - json - save to mysql
+                // generate report 3 - xml
+                // generate report 4 - export to mysql
+
+                // read mysql reports - read sqlite - generate excel
             }
-            
             //// Just for test - to see if something has been written to the Database
             // Console.WriteLine(db.Destinations.Count());
         }

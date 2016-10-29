@@ -33,6 +33,9 @@ namespace TravelAgency.Client
             var mongoTourOperators = this.mongoExtractor.ExtractMongoDbTourOperators();
             // TODO: Exctract customers and discounts
 
+            // read excel 
+            // read xml - save to mongo
+                        
             var touroperators = mongoTourOperators
                 .Select(mongoTourop => new Touroperator()
                 {
