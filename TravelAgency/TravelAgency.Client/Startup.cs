@@ -22,7 +22,16 @@ namespace TravelAgency.Client
             var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoExtractor);
 
             dataImporter.ImportData();
-            travelAgencyDbContext.SaveChanges();
+            try
+            {
+                travelAgencyDbContext.SaveChanges();
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+            {
+
+                throw;
+            }
 
             //// Just for test - to see if something has been written to the Database
             // Console.WriteLine(db.Destinations.Count());
