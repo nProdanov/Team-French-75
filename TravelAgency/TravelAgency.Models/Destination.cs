@@ -5,7 +5,7 @@ namespace TravelAgency.Models
 {
     public class Destination
     {
-        private const int MinNameLength = 5;
+        private const int MinNameLength = 2;
         private const int MaxNameLength = 50;
         private const string MinNameLengthErrorMessage = "The {0} must be at least {1} characters long.";
         private const string MaxNameLengthErrorMessage = "The {0} must be no more than {1} characters long.";
