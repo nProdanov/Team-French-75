@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-using TravelAgency.MongoDbExtractor.MongoDbModels;
+using TravelAgency.ParseModels;
 
 namespace TravelAgency.MongoDbExtractor
 {

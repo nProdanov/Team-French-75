@@ -3,7 +3,7 @@ using System.Linq;
 
 using MongoDB.Driver;
 
-using TravelAgency.MongoDbExtractor.MongoDbModels;
+using TravelAgency.ParseModels;
 
 namespace TravelAgency.MongoDbExtractor
 {

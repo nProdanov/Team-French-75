@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelAgency.ParseModels
 {
-    public class Customer
+    public class CustomerParseModel
     {
         public string FirstName { get; set; }
 

@@ -7,6 +7,12 @@ namespace TravelAgency.ParseModels
 {
     public class TripMongoDbModel
     {
+        public TripMongoDbModel()
+        {
+            // TODO: check how this is going to work with mongodb
+            this.Customers = new List<CustomerParseModel>();
+        }
+
         [BsonElement("name")]
         public string Name { get; set; }
 
@@ -23,6 +29,6 @@ namespace TravelAgency.ParseModels
         [BsonElement("destinations")]
         public IEnumerable<DestinationMongoDbModel> Destinations { get; set; }
 
-        public IEnumerable<Customer> Customers { get; set; } 
+        public ICollection<CustomerParseModel> Customers { get; set; }
     }
 }

@@ -3,6 +3,8 @@ using System.Linq;
 using TravelAgency.Data;
 using TravelAgency.Models;
 using TravelAgency.MongoDbExtractor;
+using TravelAgency.Readers.Contracts;
+using TravelAgency.ParseModels;
 
 namespace TravelAgency.Client
 {
@@ -10,11 +12,13 @@ namespace TravelAgency.Client
     {
         private ITravelAgencyDbContext travelAgencyDbContext;
         private IMongoDbExtractor mongoExtractor;
+        private IExcelReader excelReader;
 
-        public TravelAgenciesDataImporter(ITravelAgencyDbContext travelAgencyDbContext, IMongoDbExtractor mongoExtractor)
+        public TravelAgenciesDataImporter(ITravelAgencyDbContext travelAgencyDbContext, IMongoDbExtractor mongoExtractor, IExcelReader excelReader)
         {
             this.travelAgencyDbContext = travelAgencyDbContext;
             this.mongoExtractor = mongoExtractor;
+            this.excelReader = excelReader;
         }
 
         public void ImportData()
@@ -33,9 +37,10 @@ namespace TravelAgency.Client
             var mongoTourOperators = this.mongoExtractor.ExtractMongoDbTourOperators();
             // TODO: Exctract customers and discounts
 
-            // read excel 
             // read xml - save to mongo
-                        
+
+            this.excelReader.ReadExcel(mongoTourOperators);
+             
             var touroperators = mongoTourOperators
                 .Select(mongoTourop => new Touroperator()
                 {
@@ -51,6 +56,15 @@ namespace TravelAgency.Client
                                 Destinations = mongoTr
                                     .Destinations
                                     .Select(mongoDest => new Destination() { Name = mongoDest.Name })
+                                    .ToList(),
+                                Customers = mongoTr
+                                    .Customers
+                                    .Select(customer => new Customer()
+                                        {
+                                            FirstName = customer.FirstName,
+                                            LastName = customer.LastName,
+                                            HasDiscount = customer.HasDiscount
+                                        })
                                     .ToList()
                             })
                             .ToList()

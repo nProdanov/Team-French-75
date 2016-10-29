@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelAgency.Readers
 {
-    class SqliteReader
+    public class SqliteReader
     {
     }
 }

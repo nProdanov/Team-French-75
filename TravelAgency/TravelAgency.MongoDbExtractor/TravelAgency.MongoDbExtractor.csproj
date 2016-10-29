@@ -68,6 +68,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TravelAgency.ParseModels\TravelAgency.ParseModels.csproj">
+      <Project>{11da7bc4-8652-4b0c-a43c-9a4b6777fe3b}</Project>
+      <Name>TravelAgency.ParseModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

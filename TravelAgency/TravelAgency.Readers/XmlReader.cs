@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelAgency.Readers
 {
-    class XmlReader
+    public class XmlReader
     {
         // reads and returns data
     }
