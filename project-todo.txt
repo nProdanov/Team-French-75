@@ -1,0 +1,10 @@
+1. mongo db input, generate collection
+2. read excel - how??
+3. read and save xml to mongo + sql
+4. pdf report
+5. xml report
+6. json report
+7. save json report to mysql
+9.1. read sqlite - 
+9.2. read mysql
+9.forreal. excel report from sqlite and mysql
