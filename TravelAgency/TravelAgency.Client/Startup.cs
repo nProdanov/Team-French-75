@@ -17,22 +17,15 @@ namespace TravelAgency.Client
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<TravelAgencyDbContext, Configuration>());
 
-            var travelAgencyDbContext = new TravelAgencyDbContext();
-            var mongoExtractor = new MongoDbDataExtractor();
-            var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoExtractor);
-
-            dataImporter.ImportData();
-            try
+            using (var travelAgencyDbContext = new TravelAgencyDbContext())
             {
+                var mongoExtractor = new MongoDbDataExtractor();
+                var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoExtractor);
+
+                dataImporter.ImportData();
                 travelAgencyDbContext.SaveChanges();
-
             }
-            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
-            {
-
-                throw;
-            }
-
+            
             //// Just for test - to see if something has been written to the Database
             // Console.WriteLine(db.Destinations.Count());
         }
