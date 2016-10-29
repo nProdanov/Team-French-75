@@ -23,17 +23,7 @@ namespace TravelAgency.Client
 
             foreach (var touroperator in touroperatorsReadyForImport)
             {
-                //System.Console.WriteLine(touroperator.Name);
-                //System.Console.WriteLine("trips:");
-                //foreach (var trip in touroperator.Trips)
-                //{
-                //    System.Console.WriteLine($"    {trip.Name}");
-                //    foreach (var dest in trip.Destinations)
-                //    {
-                //        System.Console.WriteLine($"        {dest.Name}");
-                //    }
-                //}
-                //System.Console.WriteLine();
+                // TODO: Add logic for often will call SaveChanges()
                 this.travelAgencyDbContext.Touroperators.Add(touroperator);
             }
         }
@@ -41,7 +31,7 @@ namespace TravelAgency.Client
         private IEnumerable<Touroperator> MergeData()
         {
             var mongoTourOperators = this.mongoExtractor.ExtractMongoDbTourOperators();
-
+            // TODO: Exctract customers and discounts
 
             var touroperators = mongoTourOperators
                 .Select(mongoTourop => new Touroperator()
@@ -63,9 +53,7 @@ namespace TravelAgency.Client
                             .ToList()
                     });
 
-            // TODO: here will collect and merge data from excel and xml
-
-            return touroperators; // just da ne pishi
+            return touroperators;
         }
     }
 }
