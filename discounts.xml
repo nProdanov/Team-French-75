@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <discounts>
-    <trip name="Italy-The-One-And-Only">
+    <trip name="Chiloe-Chile">
         <discountPercentage>10</discountPercentage>
     </trip>
-    <trip name="Lefkada-The-Emerald-Island">
+    <trip name="Costa-Rica">
         <discountPercentage>25</discountPercentage>
     </trip>
-    <trip name="The-Secret-Beauty-Of-Mexico">
+    <trip name="Galle-Sri-Lanka">
         <discountPercentage>30</discountPercentage>
     </trip>
-    <trip name="Santorini-Holiday">
+    <trip name="Italy-The-One-And-Only">
         <discountPercentage>20</discountPercentage>
+    </trip>
+    <trip name="Lefkada-The-Emerald-Island">
+        <discountPercentage>10</discountPercentage>
+    </trip>
+    <trip name="Liege-Belgium">
+        <discountPercentage>15</discountPercentage>
+    </trip>
+    <trip name="Mie-Prefecture-Japan">
+        <discountPercentage>5</discountPercentage>
+    </trip>
+    <trip name="Santorini-Holiday">
+        <discountPercentage>15</discountPercentage>
+    </trip>
+    <trip name="Sicily-Italy">
+        <discountPercentage>25</discountPercentage>
+    </trip>
+    <trip name="Tasmania">
+        <discountPercentage>30</discountPercentage>
+    </trip>
+    <trip name="The-Secret-Beauty-Of-Mexico">
+        <discountPercentage>10</discountPercentage>
+    </trip>
+    <trip name="Wales">
+        <discountPercentage>5</discountPercentage>
+    </trip>
+    <trip name="Zagreb-Croatia">
+        <discountPercentage>20</discountPercentage>
+    </trip>
+    <trip name="Zimbabwe">
+        <discountPercentage>10</discountPercentage>
     </trip>
 </discounts>
