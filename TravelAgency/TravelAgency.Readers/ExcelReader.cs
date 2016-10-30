@@ -15,13 +15,13 @@ namespace TravelAgency.Readers
     {
         private const string zipPath = "../../../../Reports-Departures.zip";
         private const string folderPath = "../../../../Reports-Departures";
-        private IEnumerable<TouroperatorMongoDbModel> touroperators;
+        private IEnumerable<TouroperatorParseModel> touroperators;
 
         public ExcelReader()
         {
         }
         
-        public void ReadExcel(IEnumerable<TouroperatorMongoDbModel> touroperators)
+        public void ReadExcel(IEnumerable<TouroperatorParseModel> touroperators)
         {
             if (touroperators == null)
             {
@@ -69,7 +69,7 @@ namespace TravelAgency.Readers
             }
         }
 
-        private void ReadTripFile(FileInfo tripFile, DateTime date, TouroperatorMongoDbModel touroperator)
+        private void ReadTripFile(FileInfo tripFile, DateTime date, TouroperatorParseModel touroperator)
         {
             var tripName = Path.GetFileNameWithoutExtension(tripFile.Name).Replace('-', ' ');
             var trip = touroperator.Trips.FirstOrDefault(x => x.Name == tripName);

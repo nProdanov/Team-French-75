@@ -1,23 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using TravelAgency.Data;
 using TravelAgency.Models;
-using TravelAgency.MongoDbExtractor;
 using TravelAgency.Readers.Contracts;
-using TravelAgency.ParseModels;
 
 namespace TravelAgency.Client
 {
     public class TravelAgenciesDataImporter
     {
         private ITravelAgencyDbContext travelAgencyDbContext;
-        private IMongoDbExtractor mongoExtractor;
+        private IMongoReader mongoExtractor;
         private IExcelReader excelReader;
 
-        public TravelAgenciesDataImporter(ITravelAgencyDbContext travelAgencyDbContext, IMongoDbExtractor mongoExtractor, IExcelReader excelReader)
+        public TravelAgenciesDataImporter(ITravelAgencyDbContext travelAgencyDbContext, IMongoReader mongoReader, IExcelReader excelReader)
         {
             this.travelAgencyDbContext = travelAgencyDbContext;
-            this.mongoExtractor = mongoExtractor;
+            this.mongoExtractor = mongoReader;
             this.excelReader = excelReader;
         }
 
@@ -34,7 +33,7 @@ namespace TravelAgency.Client
 
         private IEnumerable<Touroperator> MergeData()
         {
-            var mongoTourOperators = this.mongoExtractor.ExtractMongoDbTourOperators();
+            var mongoTourOperators = this.mongoExtractor.ReadMongo();
             // TODO: Exctract customers and discounts
 
             // read xml - save to mongo

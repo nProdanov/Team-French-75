@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+
 using TravelAgency.ParseModels;
 
 namespace TravelAgency.Readers.Contracts
 {
-    public interface IExcelReader
+    public interface IMongoReader
     {
-        void ReadExcel(IEnumerable<TouroperatorParseModel> touroperators);
+        IEnumerable<TouroperatorParseModel> ReadMongo();
     }
 }

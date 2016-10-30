@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 using TravelAgency.Data;
 using TravelAgency.Data.Migrations;
-using TravelAgency.MongoDbExtractor;
 using TravelAgency.Readers;
 
 namespace TravelAgency.Client
@@ -20,9 +19,9 @@ namespace TravelAgency.Client
 
             using (var travelAgencyDbContext = new TravelAgencyDbContext())
             {
-                var mongoExtractor = new MongoDbDataExtractor();
+                var mongoReader = new MongoReader();
                 var excelReader = new ExcelReader();
-                var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoExtractor, excelReader);
+                var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoReader, excelReader);
 
                 dataImporter.ImportData();
                 travelAgencyDbContext.SaveChanges();

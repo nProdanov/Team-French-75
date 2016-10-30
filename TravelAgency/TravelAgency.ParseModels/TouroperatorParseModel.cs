@@ -5,9 +5,13 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace TravelAgency.ParseModels
 {
-    public class TouroperatorMongoDbModel
+    public class TouroperatorParseModel
     {
-        public TouroperatorMongoDbModel()
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
+
+        public TouroperatorParseModel()
         {
             this.Customers = new List<CustomerParseModel>();
         }
@@ -16,7 +20,7 @@ namespace TravelAgency.ParseModels
         public string Name { get; set; }
 
         [BsonElement("trips")]
-        public IEnumerable<TripMongoDbModel> Trips { get; set; }
+        public IEnumerable<TripParseModel> Trips { get; set; }
 
         public ICollection<CustomerParseModel> Customers { get; set; }
     }

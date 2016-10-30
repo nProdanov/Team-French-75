@@ -69,10 +69,6 @@
       <Project>{c1cd7282-d249-4fd1-a072-7a13878dddce}</Project>
       <Name>TravelAgency.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TravelAgency.MongoDbExtractor\TravelAgency.MongoDbExtractor.csproj">
-      <Project>{dacddf2b-947b-4eb2-b749-de9463dd4199}</Project>
-      <Name>TravelAgency.MongoDbExtractor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TravelAgency.ParseModels\TravelAgency.ParseModels.csproj">
       <Project>{11da7bc4-8652-4b0c-a43c-9a4b6777fe3b}</Project>
       <Name>TravelAgency.ParseModels</Name>

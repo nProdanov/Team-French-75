@@ -53,12 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerParseModel.cs" />
-    <Compile Include="DestinationMongoDbModel.cs" />
+    <Compile Include="DestinationParseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultMongoDbModel.cs" />
-    <Compile Include="SchemaMongoDbModel.cs" />
-    <Compile Include="TouroperatorMongoDbModel.cs" />
-    <Compile Include="TripMongoDbModel.cs" />
+    <Compile Include="TouroperatorParseModel.cs" />
+    <Compile Include="TripParseModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

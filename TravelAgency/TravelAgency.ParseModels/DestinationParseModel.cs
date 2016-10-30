@@ -1,8 +1,8 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 
-namespace TravelAgency.MongoDbExtractor.MongoDbModels
+namespace TravelAgency.ParseModels
 {
-    public class DestinationMongoDbModel
+    public class DestinationParseModel
     {
         [BsonElement("name")]
         public string Name { get; set; }

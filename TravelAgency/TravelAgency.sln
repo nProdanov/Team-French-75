@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Models", "TravelAgency.Models\TravelAgency.Models.csproj", "{C1CD7282-D249-4FD1-A072-7A13878DDDCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Data", "TravelAgency.Data\TravelAgency.Data.csproj", "{6C21C98D-3821-47EE-82B4-F6E8FBD41F1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Client", "TravelAgency.Client\TravelAgency.Client.csproj", "{416A6128-5D3C-4BC3-B3C0-B22186B664F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.MongoDbExtractor", "TravelAgency.MongoDbExtractor\TravelAgency.MongoDbExtractor.csproj", "{DACDDF2B-947B-4EB2-B749-DE9463DD4199}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.ParseModels", "TravelAgency.ParseModels\TravelAgency.ParseModels.csproj", "{11DA7BC4-8652-4B0C-A43C-9A4B6777FE3B}"
 EndProject
@@ -39,10 +37,6 @@ Global
 		{416A6128-5D3C-4BC3-B3C0-B22186B664F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{416A6128-5D3C-4BC3-B3C0-B22186B664F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{416A6128-5D3C-4BC3-B3C0-B22186B664F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DACDDF2B-947B-4EB2-B749-DE9463DD4199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DACDDF2B-947B-4EB2-B749-DE9463DD4199}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DACDDF2B-947B-4EB2-B749-DE9463DD4199}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DACDDF2B-947B-4EB2-B749-DE9463DD4199}.Release|Any CPU.Build.0 = Release|Any CPU
 		{11DA7BC4-8652-4B0C-A43C-9A4B6777FE3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11DA7BC4-8652-4B0C-A43C-9A4B6777FE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11DA7BC4-8652-4B0C-A43C-9A4B6777FE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -17,7 +17,7 @@ namespace Test
 
         private static string zipPath = "../../../../Reports-Departures-2.zip";
         private static string folderPath = "../../../../Reports-Departures";
-        private static IEnumerable<TouroperatorMongoDbModel> Touroperators = null;
+        private static IEnumerable<TouroperatorParseModel> Touroperators = null;
 
         static void Main(string[] args)
         {
@@ -65,7 +65,7 @@ namespace Test
             }
         }
 
-        static void ReadTripFile(FileInfo tripFile, DateTime date, TouroperatorMongoDbModel touroperator)
+        static void ReadTripFile(FileInfo tripFile, DateTime date, TouroperatorParseModel touroperator)
         {
             var tripName = Path.GetFileNameWithoutExtension(tripFile.Name).Replace('-', ' ');
             var trip = touroperator.Trips.FirstOrDefault(x => x.Name == tripName);
@@ -105,7 +105,7 @@ namespace Test
             connection.Close();
         }
 
-        static void ReadExcel(IEnumerable<TouroperatorMongoDbModel> touroperators)
+        static void ReadExcel(IEnumerable<TouroperatorParseModel> touroperators)
         {
 
             DirectoryInfo root = null;

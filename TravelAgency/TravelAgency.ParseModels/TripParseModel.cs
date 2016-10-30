@@ -5,9 +5,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace TravelAgency.ParseModels
 {
-    public class TripMongoDbModel
+    public class TripParseModel
     {
-        public TripMongoDbModel()
+        public TripParseModel()
         {
             // TODO: check how this is going to work with mongodb
             this.Customers = new List<CustomerParseModel>();
@@ -27,7 +27,7 @@ namespace TravelAgency.ParseModels
         public float Discount { get; set; }
 
         [BsonElement("destinations")]
-        public IEnumerable<DestinationMongoDbModel> Destinations { get; set; }
+        public IEnumerable<DestinationParseModel> Destinations { get; set; }
 
         public ICollection<CustomerParseModel> Customers { get; set; }
     }
