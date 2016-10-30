@@ -55,6 +55,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TravelAgency.Importers\TravelAgency.Importers.csproj">
+      <Project>{9AE73B37-EEAE-4429-8950-0D7C27111E1D}</Project>
+      <Name>TravelAgency.Importers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TravelAgency.ParseModels\TravelAgency.ParseModels.csproj">
       <Project>{11da7bc4-8652-4b0c-a43c-9a4b6777fe3b}</Project>
       <Name>TravelAgency.ParseModels</Name>

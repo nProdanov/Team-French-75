@@ -24,6 +24,7 @@ namespace TravelAgency.ParseModels
         [BsonElement("arrivalDate")]
         public DateTime ArrivalDate { get; set; }
 
+        [BsonElement("discount")]
         public float Discount { get; set; }
 
         [BsonElement("destinations")]
