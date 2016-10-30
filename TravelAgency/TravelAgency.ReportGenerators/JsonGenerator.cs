@@ -11,20 +11,31 @@ namespace TravelAgency.ReportGenerators
     {
         public void GenerateReport(ITravelAgencyDbContext travelAgencyDbContext)
         {
+            string folderPath = "../../../../Json-Reports/";
+            Directory.CreateDirectory(folderPath);
+            var trips =
+            (from t in travelAgencyDbContext.Trips
+             join oper in travelAgencyDbContext.Touroperators
+             on t.Touroperator equals oper
+             select new
+             {
+                 TripID = t.Id,
+                 TripName = t.Name,
+                 TourOperator = oper.Name,
+             }).ToList();
 
-            string filePath = "../../../../Json-Reports/";
-            var trips = travelAgencyDbContext.Trips.ToList();
             JsonSerializer serializer = new JsonSerializer();
             for (int i = 0; i < trips.Count; i++)
             {
-                var filename = string.Format("{0}.json", i);
-                using (StreamWriter sw = new StreamWriter(filePath + filename))
+                var filename = string.Format("{0}.json", i + 1);
+                using (StreamWriter sw = new StreamWriter(folderPath + filename))
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
                     serializer.Serialize(writer, trips[i]);
-                   
+
                 }
             }
+
         }
     }
 }
