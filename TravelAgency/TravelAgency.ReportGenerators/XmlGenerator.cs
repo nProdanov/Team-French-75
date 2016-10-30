@@ -19,7 +19,6 @@ namespace TravelAgency.ReportGenerators
             var touroperators = travelAgencyDbContext.Touroperators.ToList();
             foreach(var touroperator in touroperators)
             {
-                
                 var touroperatorName = touroperator.Name.Replace(' ', '-');
                 var touroperatorElement = new XElement("touroperator",
                         new XAttribute("name", touroperatorName));
