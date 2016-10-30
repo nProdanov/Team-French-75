@@ -27,7 +27,7 @@ namespace TravelAgency.Client
 
                 dataImporter.ImportGeneralData();
                 travelAgencyDbContext.SaveChanges();
-
+                
                 dataImporter.ImportAdditionalData();
                 travelAgencyDbContext.SaveChanges();
 
@@ -36,9 +36,9 @@ namespace TravelAgency.Client
                 while (true)
                 {
                     Console.WriteLine("Please write the type of report you want to be generated - xml, json, pdf.");
-
+                
                     var reporterName = Console.ReadLine().ToLower();
-
+                
                     try
                     {
                         var reporter = reportersFactory.CreateReportGenerator(reporterName);
@@ -58,8 +58,6 @@ namespace TravelAgency.Client
 
                 // read mysql reports - read sqlite - generate excel
             }
-            //// Just for test - to see if something has been written to the Database
-            // Console.WriteLine(db.Destinations.Count());
         }
     }
 }
