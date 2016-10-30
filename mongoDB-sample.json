@@ -1,246 +1,242 @@
-{
-    "result": {
-        "touroperators": [
+[
+    {
+        "name": "Eleganca Tours",
+        "trips": [
             {
-                "name": "Eleganca Tours",
-                "trips": [
+                "name": "Italy The One And Only",
+                "price": 990,
+                "arrivalDate": "2016-10-28",
+                "destinations": [
                     {
-                        "name": "Italy The One And Only",
-                        "price": 990,
-                        "arrivalDate": "2016-10-28",
-                        "destinations": [
-                            {
-                                "name": "Rome"
-                            },
-                            {
-                                "name": "Naples"
-                            },
-                            {
-                                "name": "Florence"
-                            }
-                        ]
+                        "name": "Rome"
                     },
                     {
-                        "name": "Lefkada The Emerald Island",
-                        "price": 340,
-                        "arrivalDate": "2016-10-25",
-                        "destinations": [
-                            {
-                                "name": "Lefkada"
-                            },
-                            {
-                                "name": "Porto Katsiki"
-                            },
-                            {
-                                "name": "Ithaca"
-                            }
-                        ]
+                        "name": "Naples"
                     },
                     {
-                        "name": "Mie Prefecture Japan",
-                        "price": 3000,
-                        "arrivalDate": "2016-11-05",
-                        "destinations": [
-                            {
-                                "name": "Mie"
-                            }
-                        ]
+                        "name": "Florence"
                     }
                 ]
             },
             {
-                "name": "Elite Travel Agency",
-                "trips": [
+                "name": "Lefkada The Emerald Island",
+                "price": 340,
+                "arrivalDate": "2016-10-25",
+                "destinations": [
                     {
-                        "name": "The Secret Beauty Of Mexico",
-                        "price": 3300,
-                        "arrivalDate": "2016-11-01",
-                        "destinations": [
-                            {
-                                "name": "Mexico City"
-                            },
-                            {
-                                "name": "Cancun"
-                            },
-                            {
-                                "name": "Cenote Dzitnup"
-                            },
-                            {
-                                "name": "The pyramids of Teotihuacan"
-                            }
-                        ]
+                        "name": "Lefkada"
                     },
                     {
-                        "name": "Chiloe Chile",
-                        "price": 3000,
-                        "arrivalDate": "2016-11-01",
-                        "destinations": [
-                            {
-                                "name": "Chiloe"
-                            },
-                            {
-                                "name": "Chonchi"
-                            }
-                        ]
+                        "name": "Porto Katsiki"
                     },
                     {
-                        "name": "Liege Belgium",
-                        "price": 600,
-                        "arrivalDate": "2016-11-01",
-                        "destinations": [
-                            {
-                                "name": "Liege"
-                            },
-                            {
-                                "name": "Maastricht"
-                            }
-                        ]
+                        "name": "Ithaca"
                     }
                 ]
             },
             {
-                "name": "Mirage Travel",
-                "trips": [
+                "name": "Mie Prefecture Japan",
+                "price": 3000,
+                "arrivalDate": "2016-11-05",
+                "destinations": [
                     {
-                        "name": "Santorini Holiday",
-                        "price": 600,
-                        "arrivalDate": "2016-10-29",
-                        "destinations": [
-                            {
-                                "name": "Oia"
-                            },
-                            {
-                                "name": "Thera"
-                            }
-                        ]
+                        "name": "Mie"
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "name": "Elite Travel Agency",
+        "trips": [
             {
-                "name": "Rea Holidays",
-                "trips": [
+                "name": "The Secret Beauty Of Mexico",
+                "price": 3300,
+                "arrivalDate": "2016-11-01",
+                "destinations": [
                     {
-                        "name": "Zimbabwe",
-                        "price": 1200,
-                        "arrivalDate": "2016-11-02",
-                        "destinations": [
-                            {
-                                "name": "Harare"
-                            },
-                            {
-                                "name": "Gweru"
-                            },
-                            {
-                                "name": "Bulawayo"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "Mega Travel",
-                "trips": [
-                    {
-                        "name": "Sicily Italy",
-                        "price": 1000,
-                        "arrivalDate": "2016-11-02",
-                        "destinations": [
-                            {
-                                "name": "Catania"
-                            },
-                            {
-                                "name": "Mesina"
-                            },
-                            {
-                                "name": "Palermo"
-                            }
-                        ]
+                        "name": "Mexico City"
                     },
                     {
-                        "name": "Tasmania",
-                        "price": 3500,
-                        "arrivalDate": "2016-11-05",
-                        "destinations": [
-                            {
-                                "name": "Tasmania"
-                            },
-                            {
-                                "name": "Hobart"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "Reina Travel",
-                "trips": [
-                    {
-                        "name": "Costa Rica",
-                        "price": 3400,
-                        "arrivalDate": "2016-11-05",
-                        "destinations": [
-                            {
-                                "name": "Limon"
-                            },
-                            {
-                                "name": "San Jose"
-                            },
-                            {
-                                "name": "Bocas Del Toro"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "Alma Travel",
-                "trips": [
-                    {
-                        "name": "Galle Sri Lanka",
-                        "price": 3900,
-                        "arrivalDate": "2016-11-10",
-                        "destinations": [
-                            {
-                                "name": "Galle"
-                            }
-                        ]
+                        "name": "Cancun"
                     },
                     {
-                        "name": "Zagreb Croatia",
-                        "price": 900,
-                        "arrivalDate": "2016-11-10",
-                        "destinations": [
-                            {
-                                "name": "Zagreb"
-                            },
-                            {
-                                "name": "Samobor"
-                            }
-                        ]
+                        "name": "Cenote Dzitnup"
+                    },
+                    {
+                        "name": "The pyramids of Teotihuacan"
                     }
                 ]
             },
             {
-                "name": "New Balkan Tours",
-                "trips": [
+                "name": "Chiloe Chile",
+                "price": 3000,
+                "arrivalDate": "2016-11-01",
+                "destinations": [
                     {
-                        "name": "Wales",
-                        "price": 1100,
-                        "arrivalDate": "2016-11-06",
-                        "destinations": [
-                            {
-                                "name": "Elan Village"
-                            },
-                            {
-                                "name": "New Town"
-                            },
-                            {
-                                "name": "Holy Head"
-                            }
-                        ]
+                        "name": "Chiloe"
+                    },
+                    {
+                        "name": "Chonchi"
+                    }
+                ]
+            },
+            {
+                "name": "Liege Belgium",
+                "price": 600,
+                "arrivalDate": "2016-11-01",
+                "destinations": [
+                    {
+                        "name": "Liege"
+                    },
+                    {
+                        "name": "Maastricht"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mirage Travel",
+        "trips": [
+            {
+                "name": "Santorini Holiday",
+                "price": 600,
+                "arrivalDate": "2016-10-29",
+                "destinations": [
+                    {
+                        "name": "Oia"
+                    },
+                    {
+                        "name": "Thera"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Rea Holidays",
+        "trips": [
+            {
+                "name": "Zimbabwe",
+                "price": 1200,
+                "arrivalDate": "2016-11-02",
+                "destinations": [
+                    {
+                        "name": "Harare"
+                    },
+                    {
+                        "name": "Gweru"
+                    },
+                    {
+                        "name": "Bulawayo"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Mega Travel",
+        "trips": [
+            {
+                "name": "Sicily Italy",
+                "price": 1000,
+                "arrivalDate": "2016-11-02",
+                "destinations": [
+                    {
+                        "name": "Catania"
+                    },
+                    {
+                        "name": "Mesina"
+                    },
+                    {
+                        "name": "Palermo"
+                    }
+                ]
+            },
+            {
+                "name": "Tasmania",
+                "price": 3500,
+                "arrivalDate": "2016-11-05",
+                "destinations": [
+                    {
+                        "name": "Tasmania"
+                    },
+                    {
+                        "name": "Hobart"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Reina Travel",
+        "trips": [
+            {
+                "name": "Costa Rica",
+                "price": 3400,
+                "arrivalDate": "2016-11-05",
+                "destinations": [
+                    {
+                        "name": "Limon"
+                    },
+                    {
+                        "name": "San Jose"
+                    },
+                    {
+                        "name": "Bocas Del Toro"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Alma Travel",
+        "trips": [
+            {
+                "name": "Galle Sri Lanka",
+                "price": 3900,
+                "arrivalDate": "2016-11-10",
+                "destinations": [
+                    {
+                        "name": "Galle"
+                    }
+                ]
+            },
+            {
+                "name": "Zagreb Croatia",
+                "price": 900,
+                "arrivalDate": "2016-11-10",
+                "destinations": [
+                    {
+                        "name": "Zagreb"
+                    },
+                    {
+                        "name": "Samobor"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "New Balkan Tours",
+        "trips": [
+            {
+                "name": "Wales",
+                "price": 1100,
+                "arrivalDate": "2016-11-06",
+                "destinations": [
+                    {
+                        "name": "Elan Village"
+                    },
+                    {
+                        "name": "New Town"
+                    },
+                    {
+                        "name": "Holy Head"
                     }
                 ]
             }
         ]
     }
-}
+]
