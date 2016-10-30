@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using TravelAgency.Data;
 using TravelAgency.Data.Migrations;
+using TravelAgency.Importers;
 using TravelAgency.Readers;
 using TravelAgency.ReportGenerators;
 
@@ -30,6 +31,9 @@ namespace TravelAgency.Client
                 
                 dataImporter.ImportAdditionalData();
                 travelAgencyDbContext.SaveChanges();
+
+                var mongoDataImporter = new MongoImporter(xmlReader);
+                mongoDataImporter.ImportDiscounts();
 
                 var reportersFactory = new ReportGeneratorsFactory();
 
