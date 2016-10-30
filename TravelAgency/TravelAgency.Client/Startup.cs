@@ -9,6 +9,7 @@ using TravelAgency.Data;
 using TravelAgency.Data.Migrations;
 using TravelAgency.MongoDbExtractor;
 using TravelAgency.Readers;
+using TravelAgency.ReportGenerators;
 
 namespace TravelAgency.Client
 {
@@ -26,6 +27,26 @@ namespace TravelAgency.Client
 
                 dataImporter.ImportData();
                 travelAgencyDbContext.SaveChanges();
+
+                var reportersFactory = new ReportGeneratorsFactory();
+
+                while (true)
+                {
+                    Console.WriteLine("Please write the type of report you want to be generated - xml, json, pdf.");
+
+                    var reporterName = Console.ReadLine().ToLower();
+
+                    try
+                    {
+                        var reporter = reportersFactory.CreateReportGenerator(reporterName);
+                        reporter.GenerateReport(travelAgencyDbContext);
+                        Console.WriteLine($"The {reporterName} report has been successfully generated.");
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
 
                 // generate report 1 - pdf
                 // generate report 2 - json - save to mysql
