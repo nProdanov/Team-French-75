@@ -17,7 +17,7 @@ namespace TravelAgency.Client
     {
         public static void Main()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TravelAgencyDbContext, Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<TravelAgencyDbContext, Configuration>());
 
             using (var travelAgencyDbContext = new TravelAgencyDbContext())
             {
