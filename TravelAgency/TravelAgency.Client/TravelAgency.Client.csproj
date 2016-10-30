@@ -77,6 +77,10 @@
       <Project>{bd731e05-b8a8-418a-b395-7e6a23fef6a3}</Project>
       <Name>TravelAgency.Readers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TravelAgency.ReportGenerators\TravelAgency.ReportGenerators.csproj">
+      <Project>{c0087939-0810-42d9-99c6-c97e9546974e}</Project>
+      <Name>TravelAgency.ReportGenerators</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

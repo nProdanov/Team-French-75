@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelAgency.ReportGenerators
 {
-    class ExcelGenerator
+    public class ExcelGenerator
     {
         // gets data from mysql and sqlite and ....
     }

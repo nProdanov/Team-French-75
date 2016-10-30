@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TravelAgency.Data;
+using TravelAgency.ReportGenerators.Contracts;
 
 namespace TravelAgency.ReportGenerators
 {
-    class XmlGenerator
+    public class XmlGenerator : IReportGenerator
     {
+        public void GenerateReport(ITravelAgencyDbContext travelAgencyDbContext)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

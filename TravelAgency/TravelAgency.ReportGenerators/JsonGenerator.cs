@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TravelAgency.Data;
+using TravelAgency.ReportGenerators.Contracts;
 
 namespace TravelAgency.ReportGenerators
 {
-    class JsonGenerator
+    public class JsonGenerator : IReportGenerator
     {
+        public void GenerateReport(ITravelAgencyDbContext travelAgencyDbContext)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
