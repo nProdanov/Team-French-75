@@ -59,6 +59,7 @@
     <Compile Include="Contracts\IMongoReader.cs" />
     <Compile Include="ExcelReader.cs" />
     <Compile Include="Contracts\IExcelReader.cs" />
+    <Compile Include="Contracts\IXmlReader.cs" />
     <Compile Include="MongoReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqliteReader.cs" />

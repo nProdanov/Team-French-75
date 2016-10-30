@@ -12,15 +12,21 @@ namespace TravelAgency.Client
         private ITravelAgencyDbContext travelAgencyDbContext;
         private IMongoReader mongoExtractor;
         private IExcelReader excelReader;
+        private IXmlReader xmlReader;
 
-        public TravelAgenciesDataImporter(ITravelAgencyDbContext travelAgencyDbContext, IMongoReader mongoReader, IExcelReader excelReader)
+        public TravelAgenciesDataImporter(
+            ITravelAgencyDbContext travelAgencyDbContext, 
+            IMongoReader mongoReader, 
+            IExcelReader excelReader, 
+            IXmlReader xmlReader)
         {
             this.travelAgencyDbContext = travelAgencyDbContext;
             this.mongoExtractor = mongoReader;
             this.excelReader = excelReader;
+            this.xmlReader = xmlReader;
         }
 
-        public void ImportData()
+        public void ImportGeneralData()
         {
             var touroperatorsReadyForImport = this.MergeData();
 
@@ -31,6 +37,15 @@ namespace TravelAgency.Client
             }
         }
 
+        public void ImportAdditionalData()
+        {
+            var discounts = this.xmlReader.ReadXml();
+            this.travelAgencyDbContext
+                .Trips
+                .ToList()
+                .ForEach(tr => tr.Discount = discounts[tr.Name]);
+        }
+
         private IEnumerable<Touroperator> MergeData()
         {
             var mongoTourOperators = this.mongoExtractor.ReadMongo();
@@ -39,7 +54,7 @@ namespace TravelAgency.Client
             // read xml - save to mongo
 
             this.excelReader.ReadExcel(mongoTourOperators);
-             
+
             var touroperators = mongoTourOperators
                 .Select(mongoTourop => new Touroperator()
                 {
@@ -59,15 +74,15 @@ namespace TravelAgency.Client
                                 Customers = mongoTr
                                     .Customers
                                     .Select(customer => new Customer()
-                                        {
-                                            FirstName = customer.FirstName,
-                                            LastName = customer.LastName,
-                                            HasDiscount = customer.HasDiscount
-                                        })
+                                    {
+                                        FirstName = customer.FirstName,
+                                        LastName = customer.LastName,
+                                        HasDiscount = customer.HasDiscount
+                                    })
                                     .ToList()
                             })
                             .ToList()
-                    });
+                });
 
             return touroperators;
         }
