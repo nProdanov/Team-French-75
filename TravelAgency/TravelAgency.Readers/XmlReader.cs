@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
 
+using TravelAgency.Readers.Contracts;
+
 namespace TravelAgency.Readers
 {
-    public class XmlReader
+    public class XmlReader : IXmlReader
     {
-        public void ReadXml()
-        {
-            var url = "..\\..\\..\\..\\discounts.xml";
+        public const string DiscountsListPath = "..\\..\\..\\..\\discounts.xml";
 
-            var discounts = new Dictionary<string, double>();
-            using (var reader = System.Xml.XmlReader.Create(url))
+        public IDictionary<string, float> ReadXml()
+        {
+            var discounts = new Dictionary<string, float>();
+            using (var reader = System.Xml.XmlReader.Create(DiscountsListPath))
             {
                 while (reader.Read())
                 {
@@ -19,11 +21,13 @@ namespace TravelAgency.Readers
                         var tripName = reader.GetAttribute("name");
                         tripName = tripName.Replace('-', ' ');
                         reader.Read();
-                        var tripDiscount = double.Parse(reader.ReadElementString());
+                        var tripDiscount = float.Parse(reader.ReadElementString());
                         discounts.Add(tripName, tripDiscount);
                     }
                 }
             }
+
+            return discounts;
         }
     }
 }

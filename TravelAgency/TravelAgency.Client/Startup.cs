@@ -22,9 +22,13 @@ namespace TravelAgency.Client
             {
                 var mongoReader = new MongoReader();
                 var excelReader = new ExcelReader();
-                var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoReader, excelReader);
+                var xmlReader = new XmlReader();
+                var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoReader, excelReader, xmlReader);
 
-                dataImporter.ImportData();
+                dataImporter.ImportGeneralData();
+                travelAgencyDbContext.SaveChanges();
+
+                dataImporter.ImportAdditionalData();
                 travelAgencyDbContext.SaveChanges();
 
                 var reportersFactory = new ReportGeneratorsFactory();
