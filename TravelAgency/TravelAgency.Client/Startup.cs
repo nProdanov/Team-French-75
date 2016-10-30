@@ -17,23 +17,23 @@ namespace TravelAgency.Client
     {
         public static void Main()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TravelAgencyDbContext, Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<TravelAgencyDbContext, Configuration>());
 
             using (var travelAgencyDbContext = new TravelAgencyDbContext())
             {
-                var mongoReader = new MongoReader();
-                var excelReader = new ExcelReader();
-                var xmlReader = new XmlReader();
-                var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoReader, excelReader, xmlReader);
+                //var mongoReader = new MongoReader();
+                //var excelReader = new ExcelReader();
+                //var xmlReader = new XmlReader();
+                //var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoReader, excelReader, xmlReader);
 
-                dataImporter.ImportGeneralData();
-                travelAgencyDbContext.SaveChanges();
+                //dataImporter.ImportGeneralData();
+                //travelAgencyDbContext.SaveChanges();
                 
-                dataImporter.ImportAdditionalData();
-                travelAgencyDbContext.SaveChanges();
+                //dataImporter.ImportAdditionalData();
+                //travelAgencyDbContext.SaveChanges();
 
-                var mongoDataImporter = new MongoImporter(xmlReader);
-                mongoDataImporter.ImportDiscounts();
+                //var mongoDataImporter = new MongoImporter(xmlReader);
+                //mongoDataImporter.ImportDiscounts();
 
                 var reportersFactory = new ReportGeneratorsFactory();
 

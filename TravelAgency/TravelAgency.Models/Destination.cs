@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace TravelAgency.Models
 {
@@ -24,6 +25,7 @@ namespace TravelAgency.Models
         [MaxLength(MaxNameLength, ErrorMessage = MaxNameLengthErrorMessage)]
         public string Name { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Trip> Trips
         {
             get { return this.trips; }

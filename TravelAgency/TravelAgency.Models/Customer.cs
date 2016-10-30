@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace TravelAgency.Models
 {
@@ -33,6 +34,7 @@ namespace TravelAgency.Models
 
         public virtual Touroperator Touroperator { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Trip> Trips
         {
             get { return this.trips; }
