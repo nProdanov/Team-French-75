@@ -45,7 +45,7 @@ namespace TravelAgency.Client
                         reporter.GenerateReport(travelAgencyDbContext);
                         Console.WriteLine($"The {reporterName} report has been successfully generated.");
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         Console.WriteLine(e.Message);
                     }
