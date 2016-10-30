@@ -8,132 +8,41 @@ using TravelAgency.ParseModels;
 using Ionic.Zip;
 using System.Globalization;
 using System.Data.OleDb;
-using System.Data;
+using System.Data.SQLite;
 
 namespace Test
 {
-    class Program
+    public class Program
     {
-
-        private static string zipPath = "../../../../Reports-Departures-2.zip";
-        private static string folderPath = "../../../../Reports-Departures";
-        private static IEnumerable<TouroperatorParseModel> Touroperators = null;
-
-        static void Main(string[] args)
+        public static void Main()
         {
-            // Unzip();
-            ReadExcel();
-        }
+            var relativePath = "../../../../trips.db";
+            var fullPath = Path.GetFullPath(relativePath);
+            var connectionString = $"Data Source = {fullPath}; Version = 3;";
+            var tripsWithContinent = new Dictionary<string, string>();
 
-        static void Unzip()
-        {
-            using (ZipFile zip = ZipFile.Read(zipPath))
-            {
-                Directory.CreateDirectory(folderPath);
-                zip.ExtractAll(folderPath);
-            }
-
-        }
-
-        static void ReadExcel()
-        {
-            DirectoryInfo root = new DirectoryInfo(folderPath);
-            var dateFolders = root.GetDirectories();
-
-            foreach (var dateFolder in dateFolders)
-            {
-                ReadDateFolder(dateFolder);
-            }
-
-        }
-
-        static void ReadDateFolder(DirectoryInfo datefolder)
-        {
-            DateTime date = DateTime.ParseExact(datefolder.Name, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            var touroperatorsDirs = datefolder.GetDirectories();
-
-            foreach (DirectoryInfo touroperatorDir in touroperatorsDirs)
-            {
-                var touroperatorName = touroperatorDir.Name.Replace('-', ' ');
-                var touroperator = Touroperators.FirstOrDefault(x => x.Name == touroperatorName);
-
-                var tripFiles = touroperatorDir.GetFiles("*.*");
-                foreach (var tripFile in tripFiles)
-                {
-                    ReadTripFile(tripFile, date, touroperator);
-                }
-            }
-        }
-
-        static void ReadTripFile(FileInfo tripFile, DateTime date, TouroperatorParseModel touroperator)
-        {
-            var tripName = Path.GetFileNameWithoutExtension(tripFile.Name).Replace('-', ' ');
-            var trip = touroperator.Trips.FirstOrDefault(x => x.Name == tripName);
-
-            var connection = new OleDbConnection($"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = {tripFile.FullName};Extended Properties = \"Excel 12.0 Xml;HDR=YES\";");
+            SQLiteConnection connection = new SQLiteConnection(connectionString);
             connection.Open();
 
             using (connection)
             {
-                DataTable tables = connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
-                var tableName = tables.Rows[0]["TABLE_NAME"];
-                Console.WriteLine(tableName);
+                var getTripsDataCommand = new SQLiteCommand("SELECT * FROM Trips", connection);
 
-                var getCustomersCommand = new OleDbCommand($"SELECT * FROM [{tableName}]", connection);
-                var reader = getCustomersCommand.ExecuteReader();
+                var reader = getTripsDataCommand.ExecuteReader();
 
                 using (reader)
                 {
                     while (reader.Read())
                     {
-                        var firstName = (string)reader["First Name"];
-                        var lastName = (string)reader["Last Name"];
-                        var hasDiscount = (string)reader["Has Discount"] == "Yes" ? true : false;
-
-                        var customer = new CustomerParseModel()
-                        {
-                            FirstName = firstName,
-                            LastName = lastName,
-                            HasDiscount = hasDiscount
-                        };
-
-                        trip.Customers.Add(customer);
+                        tripsWithContinent.Add(reader["Name"].ToString(), reader["Continent"].ToString());
                     }
                 }
             }
 
-            connection.Close();
-        }
-
-        static void ReadExcel(IEnumerable<TouroperatorParseModel> touroperators)
-        {
-
-            DirectoryInfo root = null;
-
-            FileInfo[] files = null;
-            DirectoryInfo[] subDirs = null;
-
-            files = root.GetFiles("*.*");
-
-            if (files != null)
+            foreach (var pair in tripsWithContinent)
             {
-                foreach (FileInfo fi in files)
-                {
-
-                }
+                Console.WriteLine(pair.Key + "-"+pair.Value);
             }
-
-            subDirs = root.GetDirectories();
-
-            foreach (DirectoryInfo dirInfo in subDirs)
-            {
-
-            }
-
         }
-
-
-
-
     }
 }

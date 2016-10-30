@@ -15,6 +15,7 @@ namespace TravelAgency.ReportGenerators
 
             XElement root = new XElement("profits-report");
 
+            // TODO: Optimize code
 
             var touroperators = travelAgencyDbContext.Touroperators.ToList();
             foreach(var touroperator in touroperators)
