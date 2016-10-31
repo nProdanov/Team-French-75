@@ -1,11 +1,25 @@
-﻿using Telerik.OpenAccess;
+﻿using System.Collections.Generic;
+using System.Linq;
+
+using Telerik.OpenAccess;
+
+using Newtonsoft.Json;
+
 using TravelAgency.Importers.MySqlUtils;
+using TravelAgency.Readers.Contracts;
 
 namespace TravelAgency.Importers
 {
-    class MySqlImporter
+    public class MySqlImporter
     {
         private const string ConnectionString = "server=localhost;database=travelagency;uid=root;pwd=1234;";
+
+        private IJsonReportsFileReader jsonFileReportReader;
+
+        public MySqlImporter(IJsonReportsFileReader jsonFileReportReader)
+        {
+            this.jsonFileReportReader = jsonFileReportReader;
+        }
 
         public void ImportTripsReports()
         {
@@ -14,10 +28,19 @@ namespace TravelAgency.Importers
                 var schemaHandler = context.GetSchemaHandler();
                 EnsureDB(schemaHandler);
 
-                //context.Add(tripsReportsToAdd);
+                var tripsReportsToAdd = MapTripReportsFromJson();
+                context.Add(tripsReportsToAdd);
                 context.SaveChanges();
             }
         }
+
+        private IEnumerable<TripReport> MapTripReportsFromJson()
+        {
+            var jsonReports = this.jsonFileReportReader.ReadJsonReports();
+
+            var tripReports = jsonReports.Select(json => JsonConvert.DeserializeObject<TripReport>(json));
+            return tripReports;
+        }  
 
         private static void EnsureDB(ISchemaHandler schemaHandler)
         {
