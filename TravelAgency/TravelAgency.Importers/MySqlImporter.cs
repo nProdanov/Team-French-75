@@ -12,7 +12,7 @@ namespace TravelAgency.Importers
 {
     public class MySqlImporter
     {
-        private const string ConnectionString = "server=localhost;database=travelagency;uid=root;pwd=1234;";
+        private const string ConnectionString = "server=localhost;database=travelagency;uid=root;pwd=Botev1912;";
 
         private IJsonReportsFileReader jsonFileReportReader;
 
