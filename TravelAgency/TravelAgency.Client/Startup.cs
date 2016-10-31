@@ -36,31 +36,33 @@ namespace TravelAgency.Client
                 mongoDataImporter.ImportDiscounts();
 
                 var reportersFactory = new ReportGeneratorsFactory();
-
+                
                 while (true)
                 {
-                    Console.WriteLine("Please write the type of report you want to be generated - xml, json, pdf.");
+                    Console.WriteLine("Please write the type of report you want to be generated - xml, json, pdf, xlsx.");
                 
                     var reporterName = Console.ReadLine().ToLower();
-                
-                    try
+
+                    // TODO: find another way
+                    if (reporterName == "xlsx")
                     {
-                        var reporter = reportersFactory.CreateReportGenerator(reporterName);
-                        reporter.GenerateReport(travelAgencyDbContext);
-                        Console.WriteLine($"The {reporterName} report has been successfully generated.");
+                        var excel = new ExcelGenerator();
+                        excel.GenerateReport();
                     }
-                    catch (Exception e)
+                    else
                     {
-                        Console.WriteLine(e.Message);
+                        try
+                        {
+                            var reporter = reportersFactory.CreateReportGenerator(reporterName);
+                            reporter.GenerateReport(travelAgencyDbContext);
+                            Console.WriteLine($"The {reporterName} report has been successfully generated.");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                     }
                 }
-
-                // generate report 1 - pdf
-                // generate report 2 - json - save to mysql
-                // generate report 3 - xml
-                // generate report 4 - export to mysql
-
-                // read mysql reports - read sqlite - generate excel
             }
         }
     }
