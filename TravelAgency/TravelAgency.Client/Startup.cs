@@ -28,7 +28,7 @@ namespace TravelAgency.Client
 
                 dataImporter.ImportGeneralData();
                 travelAgencyDbContext.SaveChanges();
-                
+
                 dataImporter.ImportAdditionalData();
                 travelAgencyDbContext.SaveChanges();
 
