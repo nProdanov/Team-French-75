@@ -75,6 +75,10 @@
       <Project>{6c21c98d-3821-47ee-82b4-f6e8fbd41f1b}</Project>
       <Name>TravelAgency.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TravelAgency.Importers\TravelAgency.Importers.csproj">
+      <Project>{9AE73B37-EEAE-4429-8950-0D7C27111E1D}</Project>
+      <Name>TravelAgency.Importers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TravelAgency.Models\TravelAgency.Models.csproj">
       <Project>{c1cd7282-d249-4fd1-a072-7a13878dddce}</Project>
       <Name>TravelAgency.Models</Name>

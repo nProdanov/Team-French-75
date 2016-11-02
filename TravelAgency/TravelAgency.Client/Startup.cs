@@ -25,7 +25,8 @@ namespace TravelAgency.Client
                 var excelReader = new ExcelReader();
                 var xmlReader = new XmlReader();
                 var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoReader, excelReader, xmlReader);
-
+                var jsonReader = new JsonReportsFileReader();
+                var mySqlImporter = new MySqlImporter(jsonReader);
                 dataImporter.ImportGeneralData();
                 travelAgencyDbContext.SaveChanges();
 
@@ -35,7 +36,7 @@ namespace TravelAgency.Client
                 var mongoDataImporter = new MongoImporter(xmlReader);
                 mongoDataImporter.ImportDiscounts();
 
-                var reportersFactory = new ReportGeneratorsFactory();
+                var reportersFactory = new ReportGeneratorsFactory(mySqlImporter);
                 
                 while (true)
                 {

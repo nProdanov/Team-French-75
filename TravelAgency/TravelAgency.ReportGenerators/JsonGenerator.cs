@@ -1,70 +1,50 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Net.Sockets;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using TravelAgency.Data;
+using TravelAgency.Importers;
 using TravelAgency.ReportGenerators.Contracts;
 
 namespace TravelAgency.ReportGenerators
 {
     public class JsonGenerator : IReportGenerator
     {
+        private MySqlImporter mySqlImporter;
+
+        public JsonGenerator(MySqlImporter importer)
+        {
+            this.mySqlImporter = importer;
+        }
         public void GenerateReport(ITravelAgencyDbContext travelAgencyDbContext)
         {
             string folderPath = "../../../../Json-Reports/";
             Directory.CreateDirectory(folderPath);
-            var trips = (from t in travelAgencyDbContext.Trips
-                         join oper in travelAgencyDbContext.Touroperators
-                         on t.Touroperator equals oper
-                         select new
-                         {
-                             TripID = t.Id,
-                             TripName = t.Name,
-                             TourOperator = oper.Name,
-                             tripPrice= t.Price,
-                             tripDiscount=t.Discount
-                         }).ToList();
-            //var NumberOfTrips = travelAgencyDbContext.Trips.Count();
-
-            JsonSerializer serializer = new JsonSerializer();
-            for (int i = 0; i < trips.Count; i++)
-            {
-                var totalTripsSold = 0;
-                decimal totalAmountPerTrip = 0;
-                var cusommersPerTrip = (from customers in travelAgencyDbContext.Customers
-                    where customers.Trips.Any(c => c.Id == i+1)
-                    select customers).ToList();
-
-                foreach (var customer in cusommersPerTrip)
+            var trips = travelAgencyDbContext.Trips.AsEnumerable()
+                .Select(tr => new
                 {
-                    totalTripsSold += 1;
-                    if (customer.HasDiscount)
-                    {
-                        totalAmountPerTrip += trips[i].tripPrice-(trips[i].tripPrice* (decimal)trips[i].tripDiscount/100);
-                    }
-                    else
-                    {
-                        totalAmountPerTrip += trips[i].tripPrice;
-                    }
-                    
-                }
+                    TripID = tr.Id,
+                    TripName = tr.Name,
+                    TourOperator = tr.Touroperator.Name,
+                    TotalTripsSold = tr.Customers.Count,
+                    TotalIncomes = tr.Customers.Count() * (tr.Price) - (decimal)(tr.Customers.Count(c => c.HasDiscount) * tr.Discount / 100) * (tr.Price)
 
-                JObject json = JObject.FromObject(trips[i]);
-                json.Add("TotalTripsSold", totalTripsSold);
-                json.Add("TotalIncomes", totalAmountPerTrip);
-                json.Remove("tripPrice");
-                json.Remove("tripDiscount");
-                var filename = string.Format("{0}.json", i + 1);
+                }).ToList();
+            JsonSerializer serializer = new JsonSerializer();
+            var fileSequence = 1;
+            foreach (var trip in trips)
+            {
+
+                var filename = string.Format("{0}.json", fileSequence);
+                fileSequence++;
                 using (StreamWriter sw = new StreamWriter(folderPath + filename))
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
-                    serializer.Serialize(writer, json);
+                    serializer.Serialize(writer, trip);
 
                 }
             }
 
+            mySqlImporter.ImportTripsReports();
         }
     }
 }
