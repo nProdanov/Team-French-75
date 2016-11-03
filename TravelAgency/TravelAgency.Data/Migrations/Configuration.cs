@@ -16,16 +16,6 @@ namespace TravelAgency.Data.Migrations
 
         protected override void Seed(TravelAgencyDbContext context)
         {
-            if (context.Destinations.Any())
-            {
-                return;
-            }
-
-            // Just for test perpoces - from here we will read the files and Seed the data to Database
-            context.Destinations.AddOrUpdate(new Destination
-            {
-                Name = "Some name"
-            });
         }
     }
 }

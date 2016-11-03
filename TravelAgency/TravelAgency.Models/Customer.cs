@@ -31,8 +31,6 @@ namespace TravelAgency.Models
 
         public bool HasDiscount { get; set; }
 
-        public virtual Touroperator Touroperator { get; set; }
-
         public virtual ICollection<Trip> Trips
         {
             get { return this.trips; }

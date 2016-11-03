@@ -11,12 +11,10 @@ namespace TravelAgency.Models
         private const string MaxNameLengthErrorMessage = "The {0} must be no more than {1} characters long.";
 
         private ICollection<Trip> trips;
-        private ICollection<Customer> customers;
 
         public Touroperator()
         {
             this.trips = new HashSet<Trip>();
-            this.customers = new HashSet<Customer>();
         }
 
         public int Id { get; set; }
@@ -30,12 +28,6 @@ namespace TravelAgency.Models
         {
             get { return this.trips; }
             set { this.trips = value; }
-        }
-
-        public virtual ICollection<Customer> Customers
-        {
-            get { return this.customers; }
-            set { this.customers = value; }
         }
     }
 }
