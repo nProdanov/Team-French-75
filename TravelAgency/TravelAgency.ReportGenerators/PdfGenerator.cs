@@ -55,21 +55,15 @@ namespace TravelAgency.ReportGenerators
 
             foreach (var touroperator in touroperators)
             {
-                PdfPTable table = new PdfPTable(TableColumnsNumber);
-                table.SpacingBefore = 25f;
-                table.TotalWidth = 550f;
-                table.LockedWidth = true;
-                float[] widths = new float[] { 140f, 90, 80f, 70f, 90f, 80f };
-                table.SetWidths(widths);
-
-                PdfPCell touroperatorName = new PdfPCell(new Phrase("Touroperator: " + touroperator.Name));
+                PdfPTable table = CreateTable(TableColumnsNumber);
+               
+                var touroperatorName = CreateColumn("Touroperator: " + touroperator.Name, 1);
                 touroperatorName.Colspan = TableColumnsNumber;
                 touroperatorName.BackgroundColor = new BaseColor(51, 153, 153);
-                touroperatorName.HorizontalAlignment = 1;
                 touroperatorName.PaddingBottom = 5f;
                 table.AddCell(touroperatorName);
 
-                GetColums(table);
+                GetHeaders(table);
 
                 var trips = touroperator.Trips.Where(y => y.DeparterDate > reportStartDate || y.DeparterDate < reportEndDate).ToList();
                 
@@ -80,12 +74,10 @@ namespace TravelAgency.ReportGenerators
                     arrivalDate = trip.ArrivalDate;
 
                     table.AddCell(tripName);
-                    var departerDateCell = new PdfPCell(new Phrase(departerDate.ToString(DateTimeFormat)));
-                    departerDateCell.HorizontalAlignment = 1;
+                    var departerDateCell = CreateColumn(departerDate.ToString(DateTimeFormat), 1);
                     table.AddCell(departerDateCell);
 
-                    var arrivalDateCell = new PdfPCell(new Phrase(arrivalDate.ToString(DateTimeFormat)));
-                    arrivalDateCell.HorizontalAlignment = 1;
+                    var arrivalDateCell = CreateColumn(arrivalDate.ToString(DateTimeFormat), 1);
                     table.AddCell(arrivalDateCell);
 
                     decimal tripProfit = 0;
@@ -108,22 +100,17 @@ namespace TravelAgency.ReportGenerators
                         }
                     }
 
-                    var customers = new PdfPCell(new Phrase(customersCount.ToString()));
-                    customers.HorizontalAlignment = 1;
+                    var customers = CreateColumn(customersCount.ToString(), 1);
                     table.AddCell(customers);
 
-                    var totalDiscountCell = new PdfPCell(new Phrase(totalDiscountAmount.ToString("N")));
-                    totalDiscountCell.HorizontalAlignment = 2;
+                    var totalDiscountCell = CreateColumn(totalDiscountAmount.ToString("N"), 2);
                     table.AddCell(totalDiscountCell);
 
-                    var tripProfitCell = new PdfPCell(new Phrase(tripProfit.ToString("N")));
-                    tripProfitCell.HorizontalAlignment = 2;
+                    var tripProfitCell = CreateColumn(tripProfit.ToString("N"), 2);
                     table.AddCell(tripProfitCell);
                 }
 
-                var cellTotal = new PdfPCell(new Phrase("Total Profit: $ " + total.ToString("N")));
-                cellTotal.Colspan = TableColumnsNumber;
-                cellTotal.HorizontalAlignment = 2;
+                var cellTotal = CreateColumn("Total Profit: $ " + total.ToString("N"), 2);
                 cellTotal.BackgroundColor = new BaseColor(241, 241, 241);
                 cellTotal.PaddingBottom = 5f;
                 cellTotal.PaddingRight = 30f;
@@ -135,20 +122,32 @@ namespace TravelAgency.ReportGenerators
             doc.Close();
         }
 
-        private void GetColums(PdfPTable table)
+        private PdfPTable CreateTable(int tableColumnsNumber)
         {
-            table.AddCell(CreateColumn("Trip name"));
-            table.AddCell(CreateColumn("Departure Date"));
-            table.AddCell(CreateColumn("Arrival Date"));
-            table.AddCell(CreateColumn("Customers"));
-            table.AddCell(CreateColumn("Discount amont"));
-            table.AddCell(CreateColumn("Total profit"));
+            PdfPTable table = new PdfPTable(TableColumnsNumber);
+            table.SpacingBefore = 25f;
+            table.TotalWidth = 550f;
+            table.LockedWidth = true;
+            float[] widths = new float[] { 140f, 90, 80f, 70f, 90f, 80f };
+            table.SetWidths(widths);
+
+            return table;
         }
 
-        private PdfPCell CreateColumn(string columnName)
+        private void GetHeaders(PdfPTable table)
+        {
+            table.AddCell(CreateColumn("Trip name", 1));
+            table.AddCell(CreateColumn("Departure Date", 1));
+            table.AddCell(CreateColumn("Arrival Date", 1));
+            table.AddCell(CreateColumn("Customers", 1));
+            table.AddCell(CreateColumn("Discount amont", 1));
+            table.AddCell(CreateColumn("Total profit", 1));
+        }
+
+        private PdfPCell CreateColumn(string columnName, int alignment)
         {
             PdfPCell column = new PdfPCell(new Phrase(columnName));
-            column.HorizontalAlignment = 1;
+            column.HorizontalAlignment = alignment;
 
             return column;
         }

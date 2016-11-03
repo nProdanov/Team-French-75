@@ -66,7 +66,7 @@ namespace TravelAgency.Client
                                 Name = mongoTr.Name,
                                 Price = mongoTr.Price,
                                 ArrivalDate = mongoTr.ArrivalDate,
-                                DeparterDate = System.DateTime.Now,
+                                DeparterDate = mongoTr.ArrivalDate.AddDays(-15), // Changed from DateTime.Now - departure date is always before arrival date
                                 Destinations = mongoTr
                                     .Destinations
                                     .Select(mongoDest => new Destination() { Name = mongoDest.Name })
