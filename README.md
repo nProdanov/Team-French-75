@@ -11,7 +11,7 @@
 
 ##Project desctiption:##
 
-![](Images/ProjectScheme.png)
+![](/Images/ProjectScheme.png)
 
 Travel Agency Database System is a project for creating Travel Agency databases schemes and reports implemented by:
 
@@ -29,11 +29,11 @@ Travel Agency Database System is a project for creating Travel Agency databases 
 ###Sample Project Images:###
 
 
-![](Images/MSSQL_Diagram.png)
+![](/Images/MSSQL_Diagram.png)
 
 
 
-![](Images/Reports.png)
+![](/Images/Reports.png)
 
 
 
