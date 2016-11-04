@@ -4,19 +4,19 @@ namespace TravelAgency.Importers.MySqlUtils
 {
     public class TripReport
     {
-        [JsonIgnore]
+        [JsonProperty("TripID")]
         public int ID { get; set; }
 
-        [JsonProperty("tripName")]
+        [JsonProperty("TripName")]
         public string TripName { get; set; }
 
-        [JsonProperty("touroperator")]
+        [JsonProperty("TourOperator")]
         public string TouroperatorName { get; set; }
 
-        [JsonProperty("totalTripsSold")]
+        [JsonProperty("TotalTripsSold")]
         public int TotalTripsSold { get; set; }
 
-        [JsonProperty("totalIncomes")]
+        [JsonProperty("TotalIncomes")]
         public decimal TotalIncomes { get; set; }
     }
 }

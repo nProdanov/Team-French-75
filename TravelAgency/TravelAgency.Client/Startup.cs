@@ -37,7 +37,7 @@ namespace TravelAgency.Client
                 mongoDataImporter.ImportDiscounts();
 
                 var reportersFactory = new ReportGeneratorsFactory(mySqlImporter);
-                
+
                 while (true)
                 {
                     Console.WriteLine("Please write the type of report you want to be generated - xml, json, pdf, xlsx.");
