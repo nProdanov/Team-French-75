@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace TravelAgency.Importers.MySqlUtils
+namespace TravelAgency.ParseModels
 {
-    public class TripReport
+    public class TripReportParseModel
     {
         [JsonProperty("TripID")]
         public int ID { get; set; }

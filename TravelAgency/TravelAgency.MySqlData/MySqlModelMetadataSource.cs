@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-
 using Telerik.OpenAccess.Metadata.Fluent;
 
-namespace TravelAgency.Importers.MySqlUtils
+namespace TravelAgency.MySqlData
 {
     public partial class MySqlModelMetadataSource : FluentMetadataSource
     {
@@ -10,7 +9,7 @@ namespace TravelAgency.Importers.MySqlUtils
         {
             var configurations = new List<MappingConfiguration>();
 
-            var tripReportMapping = new MappingConfiguration<TripReport>();
+            var tripReportMapping = new MappingConfiguration<TripReportMySqlModel>();
             tripReportMapping.MapType(tripReport => new
             {
                 ID = tripReport.ID,

@@ -5,8 +5,9 @@ using Telerik.OpenAccess;
 
 using Newtonsoft.Json;
 
-using TravelAgency.Importers.MySqlUtils;
 using TravelAgency.Readers.Contracts;
+using TravelAgency.MySqlData;
+using TravelAgency.ParseModels;
 
 namespace TravelAgency.Importers
 {
@@ -34,11 +35,22 @@ namespace TravelAgency.Importers
             }
         }
 
-        private IEnumerable<TripReport> MapTripReportsFromJson()
+        private IEnumerable<TripReportMySqlModel> MapTripReportsFromJson()
         {
             var jsonReports = this.jsonFileReportReader.ReadJsonReports();
 
-            var tripReports = jsonReports.Select(json => JsonConvert.DeserializeObject<TripReport>(json));
+            var tripReports = 
+                jsonReports
+                .Select(json => JsonConvert.DeserializeObject<TripReportParseModel>(json))
+                .Select(jsonTrip => new TripReportMySqlModel()
+                {
+                    ID = jsonTrip.ID,
+                    TripName = jsonTrip.TripName,
+                    TotalIncomes = jsonTrip.TotalIncomes,
+                    TotalTripsSold = jsonTrip.TotalTripsSold,
+                    TouroperatorName = jsonTrip.TouroperatorName
+                });
+
             return tripReports;
         }  
 

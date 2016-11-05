@@ -3,7 +3,7 @@
 using Telerik.OpenAccess;
 using Telerik.OpenAccess.Metadata;
 
-namespace TravelAgency.Importers.MySqlUtils
+namespace TravelAgency.MySqlData
 {
     public partial class MySqlContext : OpenAccessContext
     {
@@ -15,11 +15,11 @@ namespace TravelAgency.Importers.MySqlUtils
         {
         }
 
-        public IQueryable<TripReport> TripsReports
+        public IQueryable<TripReportMySqlModel> TripsReports
         {
             get
             {
-                return this.GetAll<TripReport>();
+                return this.GetAll<TripReportMySqlModel>();
             }
         }
 
@@ -33,6 +33,5 @@ namespace TravelAgency.Importers.MySqlUtils
 
             return backend;
         }
-
     }
 }

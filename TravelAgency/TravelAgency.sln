@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Importers", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.ReportGenerators", "TravelAgency.ReportGenerators\TravelAgency.ReportGenerators.csproj", "{C0087939-0810-42D9-99C6-C97E9546974E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.MySqlData", "TravelAgency.MySqlData\TravelAgency.MySqlData.csproj", "{2B876CC7-69FF-4127-9D1B-3D1E10EF9127}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{C0087939-0810-42D9-99C6-C97E9546974E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0087939-0810-42D9-99C6-C97E9546974E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0087939-0810-42D9-99C6-C97E9546974E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B876CC7-69FF-4127-9D1B-3D1E10EF9127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B876CC7-69FF-4127-9D1B-3D1E10EF9127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B876CC7-69FF-4127-9D1B-3D1E10EF9127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B876CC7-69FF-4127-9D1B-3D1E10EF9127}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
