@@ -67,7 +67,8 @@ namespace TravelAgency.ReportGenerators
 
                 GetHeaders(table);
 
-                var trips = touroperator.Trips.Where(y => y.DeparterDate > reportStartDate || y.DeparterDate < reportEndDate).ToList();
+                var trips = touroperator.Trips
+                    .Where(y => y.DeparterDate > reportStartDate || y.DeparterDate < reportEndDate).ToList();
                 
                 foreach (var trip in trips)
                 {
@@ -113,6 +114,7 @@ namespace TravelAgency.ReportGenerators
                 }
 
                 var cellTotal = CreateColumn("Total Profit: $ " + total.ToString("N"), 2);
+                cellTotal.Colspan = TableColumnsNumber;
                 cellTotal.BackgroundColor = new BaseColor(241, 241, 241);
                 cellTotal.PaddingBottom = 5f;
                 cellTotal.PaddingRight = 30f;
@@ -143,7 +145,7 @@ namespace TravelAgency.ReportGenerators
             table.AddCell(CreateColumn("Arrival Date", 1));
             table.AddCell(CreateColumn("Customers", 1));
             table.AddCell(CreateColumn("Discount amont", 1));
-            table.AddCell(CreateColumn("Total profit", 1));
+            table.AddCell(CreateColumn("Profit", 1));
         }
 
         private PdfPCell CreateColumn(string columnName, int alignment)
