@@ -15,11 +15,11 @@ namespace TravelAgency.Importers.MySqlUtils
         {
         }
 
-        public IQueryable<TripReportParseModel> TripsReports
+        public IQueryable<TripReport> TripsReports
         {
             get
             {
-                return this.GetAll<TripReportParseModel>();
+                return this.GetAll<TripReport>();
             }
         }
 

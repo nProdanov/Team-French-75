@@ -79,6 +79,7 @@
     <Compile Include="MySqlUtils\MySqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlImporter.cs" />
+    <Compile Include="MySqlUtils\TripReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="OpenAccessNuGet.targets" />

@@ -10,7 +10,7 @@ namespace TravelAgency.Importers.MySqlUtils
         {
             var configurations = new List<MappingConfiguration>();
 
-            var tripReportMapping = new MappingConfiguration<TripReportParseModel>();
+            var tripReportMapping = new MappingConfiguration<TripReport>();
             tripReportMapping.MapType(tripReport => new
             {
                 ID = tripReport.ID,
