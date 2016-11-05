@@ -1,11 +1,13 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
+
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using static iTextSharp.text.Font;
+
 using TravelAgency.Data;
 using TravelAgency.ReportGenerators.Contracts;
-using static iTextSharp.text.Font;
 
 namespace TravelAgency.ReportGenerators
 {

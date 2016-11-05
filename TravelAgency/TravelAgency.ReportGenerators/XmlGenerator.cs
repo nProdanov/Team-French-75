@@ -1,6 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Xml.Linq;
+
 using TravelAgency.Data;
 using TravelAgency.ReportGenerators.Contracts;
 using TravelAgency.Models;
