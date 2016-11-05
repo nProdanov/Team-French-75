@@ -2,6 +2,7 @@
 using System.Linq;
 
 using TravelAgency.MySqlData;
+using TravelAgency.Readers.Contracts;
 
 namespace TravelAgency.Readers
 {
