@@ -28,22 +28,59 @@ namespace TravelAgency.Importers
 
         public void ImportGeneralData()
         {
-            var touroperatorsReadyForImport = this.MergeData();
+            var touroperatorsReadyForImport = this.MergeData().ToList();
 
-            foreach (var touroperator in touroperatorsReadyForImport)
+            for (int i = 0; i < touroperatorsReadyForImport.Count; i++)
             {
-                // TODO: Add logic for often will call SaveChanges()
+                var touroperator = touroperatorsReadyForImport[i];
                 this.travelAgencyDbContext.Touroperators.Add(touroperator);
+
+                if (i % 20 == 0)
+                {
+                    this.travelAgencyDbContext.SaveChanges();
+                    this.travelAgencyDbContext = new TravelAgencyDbContext();
+                }
             }
+
+            this.travelAgencyDbContext.SaveChanges();
         }
 
         public void ImportAdditionalData()
         {
             var discounts = this.xmlReader.ReadXml();
-            this.travelAgencyDbContext
+            var tripIds = this.travelAgencyDbContext
                 .Trips
-                .ToList()
-                .ForEach(tr => tr.Discount = discounts[tr.Name]);
+                .OrderBy(tr => tr.Id)
+                .Select(tr => tr.Id)
+                .ToList();
+
+            var savesCount = tripIds.Count / 100;
+
+            if (savesCount < 1)
+            {
+                savesCount = 1;
+            }
+
+            var skip = 0;
+            var take = 100;
+            for (int i = 0; i < savesCount; i++)
+            {
+                var currTripIds = tripIds.Skip(skip).Take(take).ToList();
+                var currTrips = 
+                    this.travelAgencyDbContext
+                    .Trips
+                    .Where(tr => currTripIds.Contains(tr.Id))
+                    .ToList();
+
+                foreach (var trip in currTrips)
+                {
+                    trip.Discount = discounts[trip.Name];
+                }
+
+                this.travelAgencyDbContext.SaveChanges();
+                this.travelAgencyDbContext = new TravelAgencyDbContext();
+                skip += 100;
+            }
         }
 
         private IEnumerable<Touroperator> MergeData()

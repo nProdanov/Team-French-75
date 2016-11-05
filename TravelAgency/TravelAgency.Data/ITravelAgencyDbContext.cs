@@ -13,5 +13,7 @@ namespace TravelAgency.Data
         IDbSet<Touroperator> Touroperators { get; set; }
 
         IDbSet<Trip> Trips { get; set; }
+
+        int SaveChanges();
     }
 }

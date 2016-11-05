@@ -22,10 +22,8 @@ namespace TravelAgency.Client
                 var jsonReader = new JsonReportsFileReader();
                 var mySqlImporter = new MySqlImporter(jsonReader);
                 dataImporter.ImportGeneralData();
-                travelAgencyDbContext.SaveChanges();
 
                 dataImporter.ImportAdditionalData();
-                travelAgencyDbContext.SaveChanges();
 
                 var mongoDataImporter = new MongoImporter(xmlReader);
                 mongoDataImporter.ImportDiscounts();
