@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using Telerik.OpenAccess.Metadata.Fluent;
 
 namespace TravelAgency.MySqlData
