@@ -105,7 +105,6 @@
     <Compile Include="Contracts\IExcelReader.cs" />
     <Compile Include="Contracts\IXmlReader.cs" />
     <Compile Include="Contracts\IJsonReportsFileReader.cs" />
-    <Compile Include="Contracts\IMySqlReader.cs" />
     <Compile Include="JsonReportsFileReader.cs" />
     <Compile Include="MongoReader.cs" />
     <Compile Include="MySqlReader.cs" />
