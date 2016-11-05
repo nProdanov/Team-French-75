@@ -16,10 +16,10 @@ namespace TravelAgency.ReportGenerators
 
         public void GenerateReport(ITravelAgencyDbContext travelAgencyDbContext)
         {
-            string filePath = "../../../../Generated-Reports/";
+            string pathToGenerate = Common.Constants.GeneratedReportsPath;
             string fileName = "Profit-report-per-touroperators.pdf";
 
-            ExportProfitsToPdf(travelAgencyDbContext, filePath, fileName);
+            ExportProfitsToPdf(travelAgencyDbContext, pathToGenerate, fileName);
         }
 
         public void ExportProfitsToPdf(ITravelAgencyDbContext travelAgencyDbContext, string pathToSave, string pdfReportName)

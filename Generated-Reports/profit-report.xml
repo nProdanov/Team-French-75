@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<profits-report>
+<Profits-report>
   <touroperator name="Eleganca-Tours">
     <trip name="Italy-The-One-And-Only">
       <profit>12672</profit>
@@ -58,4 +58,4 @@
       <profit>8580</profit>
     </trip>
   </touroperator>
-</profits-report>
+</Profits-report>

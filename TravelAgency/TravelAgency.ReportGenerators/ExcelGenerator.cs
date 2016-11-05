@@ -12,7 +12,8 @@ namespace TravelAgency.ReportGenerators
     {
         public void GenerateReport()
         {
-            string relativePath = @"..\..\..\..\Generated-Reports\Excel-report.xlsx";
+            string pathToGenerate = Common.Constants.GeneratedReportsPath;
+            string relativePath = $"{pathToGenerate}/Excel-report.xlsx";
             var fullPath = Path.GetFullPath(relativePath);
 
             var tripsWithContinent = ReadDataFromSqlite();

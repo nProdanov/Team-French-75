@@ -11,9 +11,10 @@ namespace TravelAgency.ReportGenerators
     {
         public void GenerateReport(ITravelAgencyDbContext travelAgencyDbContext)
         {
-            string filePath = "../../../../Generated-Reports/profit-report.xml";
+            string pathToGenerate = Common.Constants.GeneratedReportsPath;
+            string filePath = $"{pathToGenerate}/Profit-report.xml";
 
-            XElement root = new XElement("profits-report");
+            XElement root = new XElement("Profits-report");
 
             // TODO: Optimize code
 

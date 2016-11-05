@@ -71,6 +71,10 @@
     <Compile Include="XmlGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TravelAgency.Common\TravelAgency.Common.csproj">
+      <Project>{bad57df1-05ee-4a00-b127-cb32ae996e93}</Project>
+      <Name>TravelAgency.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TravelAgency.Data\TravelAgency.Data.csproj">
       <Project>{6c21c98d-3821-47ee-82b4-f6e8fbd41f1b}</Project>
       <Name>TravelAgency.Data</Name>

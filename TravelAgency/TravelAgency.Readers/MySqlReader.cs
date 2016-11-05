@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
+using TravelAgency.Common;
 using TravelAgency.MySqlData;
 using TravelAgency.Readers.Contracts;
 
@@ -8,7 +8,7 @@ namespace TravelAgency.Readers
 {
     public class MySqlReader : IMySqlReader
     {
-        private const string ConnectionString = "server=localhost;database=travelagency;uid=root;pwd=1234;";
+        private const string ConnectionString = Constants.MySQLConnectionString;
 
         public ICollection<TripReportMySqlModel> ReadMySql()
         {

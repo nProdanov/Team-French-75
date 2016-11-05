@@ -1,19 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
 using Telerik.OpenAccess;
-
 using Newtonsoft.Json;
-
 using TravelAgency.Readers.Contracts;
 using TravelAgency.MySqlData;
 using TravelAgency.ParseModels;
+using TravelAgency.Common;
 
 namespace TravelAgency.Importers
 {
     public class MySqlImporter
     {
-        private const string ConnectionString = "server=localhost;database=travelagency;uid=root;pwd=1234;";
+        private const string ConnectionString = Constants.MySQLConnectionString;
 
         private IJsonReportsFileReader jsonFileReportReader;
 

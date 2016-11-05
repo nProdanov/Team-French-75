@@ -4,14 +4,15 @@ using MongoDB.Driver;
 
 using TravelAgency.ParseModels;
 using TravelAgency.Readers.Contracts;
+using TravelAgency.Common;
 
 namespace TravelAgency.Importers
 {
     public class MongoImporter
     {
-        private const string ConnectionString = "mongodb://localhost";
-        private const string DatabaseName = "travelagency";
-        private const string CollectionName = "touroperators";
+        private const string ConnectionString = Constants.MongoDbConnectionString;
+        private const string DatabaseName = Constants.MongoDbDatabaseName;
+        private const string CollectionName = Constants.MongoDbCollectionName;
 
         private IXmlReader xmlReader;
 

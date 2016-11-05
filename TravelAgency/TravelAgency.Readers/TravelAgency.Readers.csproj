@@ -113,6 +113,10 @@
     <Compile Include="XmlReader.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TravelAgency.Common\TravelAgency.Common.csproj">
+      <Project>{bad57df1-05ee-4a00-b127-cb32ae996e93}</Project>
+      <Name>TravelAgency.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TravelAgency.MySqlData\TravelAgency.MySqlData.csproj">
       <Project>{2b876cc7-69ff-4127-9d1b-3d1e10ef9127}</Project>
       <Name>TravelAgency.MySqlData</Name>
