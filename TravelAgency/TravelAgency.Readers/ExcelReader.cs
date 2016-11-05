@@ -5,7 +5,9 @@ using System.Data.OleDb;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+
 using Ionic.Zip;
+
 using TravelAgency.ParseModels;
 using TravelAgency.Readers.Contracts;
 

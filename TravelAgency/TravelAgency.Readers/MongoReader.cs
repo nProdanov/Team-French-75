@@ -3,9 +3,9 @@ using System.Linq;
 
 using MongoDB.Driver;
 
+using TravelAgency.Common;
 using TravelAgency.ParseModels;
 using TravelAgency.Readers.Contracts;
-using TravelAgency.Common;
 
 namespace TravelAgency.Readers
 {
