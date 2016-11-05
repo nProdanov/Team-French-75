@@ -34,11 +34,11 @@ namespace TravelAgency.Importers
             }
         }
 
-        private IEnumerable<TripReport> MapTripReportsFromJson()
+        private IEnumerable<TripReportParseModel> MapTripReportsFromJson()
         {
             var jsonReports = this.jsonFileReportReader.ReadJsonReports();
 
-            var tripReports = jsonReports.Select(json => JsonConvert.DeserializeObject<TripReport>(json));
+            var tripReports = jsonReports.Select(json => JsonConvert.DeserializeObject<TripReportParseModel>(json));
             return tripReports;
         }  
 
