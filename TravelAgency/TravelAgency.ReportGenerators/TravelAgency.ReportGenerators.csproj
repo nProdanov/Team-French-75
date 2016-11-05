@@ -83,6 +83,10 @@
       <Project>{c1cd7282-d249-4fd1-a072-7a13878dddce}</Project>
       <Name>TravelAgency.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TravelAgency.MySqlData\TravelAgency.MySqlData.csproj">
+      <Project>{2b876cc7-69ff-4127-9d1b-3d1e10ef9127}</Project>
+      <Name>TravelAgency.MySqlData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TravelAgency.Readers\TravelAgency.Readers.csproj">
       <Project>{bd731e05-b8a8-418a-b395-7e6a23fef6a3}</Project>
       <Name>TravelAgency.Readers</Name>

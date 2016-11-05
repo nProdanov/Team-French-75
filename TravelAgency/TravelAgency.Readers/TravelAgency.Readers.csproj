@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IMongoReader.cs" />
+    <Compile Include="Contracts\IMySqlReader.cs" />
     <Compile Include="ExcelReader.cs" />
     <Compile Include="Contracts\IExcelReader.cs" />
     <Compile Include="Contracts\IXmlReader.cs" />
