@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+
 using Telerik.OpenAccess;
+
 using Newtonsoft.Json;
-using TravelAgency.Readers.Contracts;
+
+using TravelAgency.Common;
 using TravelAgency.MySqlData;
 using TravelAgency.ParseModels;
-using TravelAgency.Common;
+using TravelAgency.Readers.Contracts;
 
 namespace TravelAgency.Importers
 {
