@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using TravelAgency.Data;
-using TravelAgency.Data.Migrations;
 using TravelAgency.Importers;
 using TravelAgency.Readers;
 using TravelAgency.ReportGenerators;
@@ -24,7 +18,7 @@ namespace TravelAgency.Client
                 var mongoReader = new MongoReader();
                 var excelReader = new ExcelReader();
                 var xmlReader = new XmlReader();
-                var dataImporter = new TravelAgenciesDataImporter(travelAgencyDbContext, mongoReader, excelReader, xmlReader);
+                var dataImporter = new SqlImporter(travelAgencyDbContext, mongoReader, excelReader, xmlReader);
                 var jsonReader = new JsonReportsFileReader();
                 var mySqlImporter = new MySqlImporter(jsonReader);
                 dataImporter.ImportGeneralData();
