@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
 using TravelAgency.Data;
 using TravelAgency.Models;
 using TravelAgency.Readers.Contracts;
@@ -9,18 +8,23 @@ namespace TravelAgency.Importers
 {
     public class SqlImporter
     {
-        private ITravelAgencyDbContext travelAgencyDbContext;
+        //private ITravelAgencyDbContext travelAgencyDbContext;
+        private DataProvider sqlData;
         private IMongoReader mongoExtractor;
         private IExcelReader excelReader;
         private IXmlReader xmlReader;
+        private ITravelAgencyDbContext context;
 
         public SqlImporter(
-            ITravelAgencyDbContext travelAgencyDbContext, 
+            DataProvider sqlData,
+            //ITravelAgencyDbContext travelAgencyDbContext, 
             IMongoReader mongoReader, 
             IExcelReader excelReader, 
             IXmlReader xmlReader)
         {
-            this.travelAgencyDbContext = travelAgencyDbContext;
+            this.sqlData = sqlData;
+            this.context = sqlData.Context;
+            //this.travelAgencyDbContext = travelAgencyDbContext;
             this.mongoExtractor = mongoReader;
             this.excelReader = excelReader;
             this.xmlReader = xmlReader;
@@ -33,23 +37,24 @@ namespace TravelAgency.Importers
             for (int i = 0; i < touroperatorsReadyForImport.Count; i++)
             {
                 var touroperator = touroperatorsReadyForImport[i];
-                this.travelAgencyDbContext.Touroperators.Add(touroperator);
+                //this.travelAgencyDbContext.Touroperators.Add(touroperator);
+                this.sqlData.ToureoperatorRepo.Add(touroperator);
 
                 if (i % 20 == 0)
                 {
-                    this.travelAgencyDbContext.SaveChanges();
-                    this.travelAgencyDbContext = new TravelAgencyDbContext();
+                    this.sqlData.Context.SaveChanges();
+                    //this.travelAgencyDbContext = new TravelAgencyDbContext();
                 }
             }
 
-            this.travelAgencyDbContext.SaveChanges();
+            this.sqlData.Context.SaveChanges();
         }
 
         public void ImportAdditionalData()
         {
             var discounts = this.xmlReader.ReadXml();
-            var tripIds = this.travelAgencyDbContext
-                .Trips
+            var tripIds = this.sqlData.TripRepo
+                .GetAll()
                 .OrderBy(tr => tr.Id)
                 .Select(tr => tr.Id)
                 .ToList();
@@ -67,8 +72,8 @@ namespace TravelAgency.Importers
             {
                 var currTripIds = tripIds.Skip(skip).Take(take).ToList();
                 var currTrips = 
-                    this.travelAgencyDbContext
-                    .Trips
+                    this.sqlData.TripRepo
+                    .GetAll()
                     .Where(tr => currTripIds.Contains(tr.Id))
                     .ToList();
 
@@ -77,8 +82,8 @@ namespace TravelAgency.Importers
                     trip.Discount = discounts[trip.Name];
                 }
 
-                this.travelAgencyDbContext.SaveChanges();
-                this.travelAgencyDbContext = new TravelAgencyDbContext();
+                this.sqlData.Context.SaveChanges();
+                //this.travelAgencyDbContext = new TravelAgencyDbContext();
                 skip += 100;
             }
         }

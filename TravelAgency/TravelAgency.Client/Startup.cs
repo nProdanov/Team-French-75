@@ -1,7 +1,9 @@
 ﻿using System;
-
+using TravelAgency.Data.Repositories;
 using TravelAgency.Data;
+using TravelAgency.Data.Repositories;
 using TravelAgency.Importers;
+using TravelAgency.Models;
 using TravelAgency.Readers;
 using TravelAgency.ReportGenerators;
 
@@ -15,10 +17,15 @@ namespace TravelAgency.Client
 
             using (var travelAgencyDbContext = new TravelAgencyDbContext())
             {
+                var sqlData = new DataProvider(travelAgencyDbContext, new EfGenericRepostitory<Customer>(travelAgencyDbContext),
+                                               new EfGenericRepostitory<Destination>(travelAgencyDbContext),
+                                               new EfGenericRepostitory<Touroperator>(travelAgencyDbContext),
+                                               new EfGenericRepostitory<Trip>(travelAgencyDbContext));
                 var mongoReader = new MongoReader();
                 var excelReader = new ExcelReader();
                 var xmlReader = new XmlReader();
-                var dataImporter = new SqlImporter(travelAgencyDbContext, mongoReader, excelReader, xmlReader);
+              
+                var dataImporter = new SqlImporter(sqlData, mongoReader, excelReader, xmlReader);
                 var jsonReader = new JsonReportsFileReader();
                 var mySqlImporter = new MySqlImporter(jsonReader);
                 dataImporter.ImportGeneralData();

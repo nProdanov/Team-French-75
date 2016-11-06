@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 
 using TravelAgency.Models;
 
@@ -18,5 +19,10 @@ namespace TravelAgency.Data
         public virtual IDbSet<Touroperator> Touroperators { get; set; }
 
         public virtual IDbSet<Trip> Trips { get; set; }
+
+        IDbSet<T> ITravelAgencyDbContext.Set<T>()
+        {
+            return base.Set<T>();
+        }
     }
 }
