@@ -238,5 +238,83 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Avioturs",
+        "trips": [
+            {
+                "name": "West Bay Beach",
+                "price": 3500,
+                "arrivalDate": "2016-11-04",
+                "destinations": [
+                    {
+                        "name": "Coconut Point"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Classic Journeys",
+        "trips": [
+            {
+                "name": "Torres Del Paine",
+                "price": 3900,
+                "arrivalDate": "2016-11-10",
+                "destinations": [
+                    {
+                        "name": "Nacional TOrres del Paine"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Daria Travel",
+        "trips": [
+            {
+                "name": "Baia do Sancho",
+                "price": 2900,
+                "arrivalDate": "2016-11-04",
+                "destinations": [
+                    {
+                        "name": "Praia do Sancho"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Gray & Co",
+        "trips": [
+            {
+                "name": "Instanbul",
+                "price": 900,
+                "arrivalDate": "2016-11-02",
+                "destinations": [
+                    {
+                        "name": "Instanbul"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Absolute Travel",
+        "trips": [
+            {
+                "name": "Bora Bora",
+                "price": 5300,
+                "arrivalDate": "2016-11-11",
+                "destinations": [
+                    {
+                        "name": "Vaitape"
+                    },
+                    {
+                        "name": "Faaunai"
+                    }
+                ]
+            }
+        ]
     }
 ]

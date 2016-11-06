@@ -42,4 +42,19 @@
     <trip name="Zimbabwe">
         <discountPercentage>10</discountPercentage>
     </trip>
+    <trip name="West-Bay-Beach">
+        <discountPercentage>5</discountPercentage>
+    </trip>
+    <trip name="Torres-Del-Paine">
+        <discountPercentage>20</discountPercentage>
+    </trip>
+    <trip name="Baia-do-Sancho">
+        <discountPercentage>5</discountPercentage>
+    </trip>
+    <trip name="Instanbul">
+        <discountPercentage>35</discountPercentage>
+    </trip>
+    <trip name="Bora-Bora">
+        <discountPercentage>15</discountPercentage>
+    </trip>
 </discounts>
