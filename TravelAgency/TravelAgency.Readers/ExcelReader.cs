@@ -83,7 +83,6 @@ namespace TravelAgency.Readers
             {
                 DataTable tables = connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
                 var tableName = tables.Rows[0]["TABLE_NAME"];
-                Console.WriteLine(tableName);
 
                 var getCustomersCommand = new OleDbCommand($"SELECT * FROM [{tableName}]", connection);
                 var reader = getCustomersCommand.ExecuteReader();

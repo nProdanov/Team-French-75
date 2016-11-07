@@ -40,6 +40,11 @@
       <profit>28700</profit>
     </trip>
   </touroperator>
+  <touroperator name="Reina-Travel">
+    <trip name="Costa-Rica">
+      <profit>28900</profit>
+    </trip>
+  </touroperator>
   <touroperator name="Alma-Travel">
     <trip name="Galle-Sri-Lanka">
       <profit>28080</profit>
@@ -48,14 +53,34 @@
       <profit>4680</profit>
     </trip>
   </touroperator>
-  <touroperator name="Reina-Travel">
-    <trip name="Costa-Rica">
-      <profit>28900</profit>
-    </trip>
-  </touroperator>
   <touroperator name="New-Balkan-Tours">
     <trip name="Wales">
       <profit>8580</profit>
+    </trip>
+  </touroperator>
+  <touroperator name="Avioturs">
+    <trip name="West-Bay-Beach">
+      <profit>33950</profit>
+    </trip>
+  </touroperator>
+  <touroperator name="Classic-Journeys">
+    <trip name="Torres-Del-Paine">
+      <profit>34320</profit>
+    </trip>
+  </touroperator>
+  <touroperator name="Daria-Travel">
+    <trip name="Baia-do-Sancho">
+      <profit>31030</profit>
+    </trip>
+  </touroperator>
+  <touroperator name="Gray-&amp;-Co">
+    <trip name="Instanbul">
+      <profit>9495</profit>
+    </trip>
+  </touroperator>
+  <touroperator name="Absolute-Travel">
+    <trip name="Bora-Bora">
+      <profit>39220</profit>
     </trip>
   </touroperator>
 </Profits-report>

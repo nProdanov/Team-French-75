@@ -11,12 +11,11 @@ namespace TravelAgency.ReportGenerators
     {
         private MySqlImporter mySqlImporter;
 
-
-
         public ReportGeneratorsFactory(MySqlImporter mySqlImporter)
         {
             this.mySqlImporter = mySqlImporter;
         }
+
         public IReportGenerator CreateReportGenerator(string reportRequest)
         {
             var controllerClassName = reportRequest + "Generator";
@@ -30,17 +29,18 @@ namespace TravelAgency.ReportGenerators
             {
                 throw new ArgumentException("There is no generator of that type.");
             }
+
             IReportGenerator instance;
-            if (type==typeof(JsonGenerator))
+            if (type == typeof(JsonGenerator))
             {
-                instance = (IReportGenerator)Activator.CreateInstance(type,this.mySqlImporter);
-            }else
+                instance = (IReportGenerator)Activator.CreateInstance(type, this.mySqlImporter);
+            }
+            else
             {
                 instance = (IReportGenerator)Activator.CreateInstance(type);
             }
-            
-            return instance;
 
+            return instance;
         }
     }
 }
