@@ -6,6 +6,7 @@ using Microsoft.Office.Interop.Excel;
 
 using TravelAgency.MySqlData;
 using TravelAgency.Readers;
+using TravelAgency.ReportGenerators.Contracts;
 
 namespace TravelAgency.ReportGenerators
 {
