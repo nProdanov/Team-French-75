@@ -91,9 +91,6 @@ namespace TravelAgency.Importers
         private IEnumerable<Touroperator> MergeData()
         {
             var mongoTourOperators = this.mongoExtractor.ReadMongo();
-            // TODO: Exctract customers and discounts
-
-            // read xml - save to mongo
 
             this.excelReader.ReadExcel(mongoTourOperators);
 
@@ -108,7 +105,7 @@ namespace TravelAgency.Importers
                                 Name = mongoTr.Name,
                                 Price = mongoTr.Price,
                                 ArrivalDate = mongoTr.ArrivalDate,
-                                DeparterDate = mongoTr.ArrivalDate.AddDays(-15), // Changed from DateTime.Now - departure date is always before arrival date
+                                DeparterDate = mongoTr.ArrivalDate.AddDays(-15), 
                                 Destinations = mongoTr
                                     .Destinations
                                     .Select(mongoDest => new Destination() { Name = mongoDest.Name })
