@@ -8,7 +8,7 @@ namespace TravelAgency.Readers
 {
     public class JsonReportsFileReader : IJsonReportsFileReader
     {
-        private const string JsonReportsDirectory = "../../../../Json-Reports/";
+        private const string JsonReportsDirectory = "../../../../Generated-Reports/Json-Reports/";
 
         public IEnumerable<string> ReadJsonReports()
         {

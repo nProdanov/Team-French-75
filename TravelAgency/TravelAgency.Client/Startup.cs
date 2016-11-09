@@ -1,7 +1,6 @@
 ﻿using System;
 using TravelAgency.Data.Repositories;
 using TravelAgency.Data;
-using TravelAgency.Data.Repositories;
 using TravelAgency.Importers;
 using TravelAgency.Models;
 using TravelAgency.Readers;

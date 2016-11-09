@@ -19,7 +19,7 @@ namespace TravelAgency.ReportGenerators
         }
         public void GenerateReport(ITravelAgencyDbContext travelAgencyDbContext)
         {
-            string folderPath = "../../../../Json-Reports/";
+            string folderPath = "../../../../Generated-Reports/Json-Reports/";
             Directory.CreateDirectory(folderPath);
             var trips = travelAgencyDbContext.Trips.AsEnumerable()
                 .Select(tr => new
@@ -36,7 +36,7 @@ namespace TravelAgency.ReportGenerators
             foreach (var trip in trips)
             {
 
-                var filename = string.Format("{0}.json", fileSequence);
+                var filename = $"{trip.TripName}.json";//string.Format("{0}.json", fileSequence);
                 fileSequence++;
                 using (StreamWriter sw = new StreamWriter(folderPath + filename))
                 using (JsonWriter writer = new JsonTextWriter(sw))
